@@ -19,8 +19,8 @@
     <Label text="Personal Budgeting System" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
 
     <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 30; -fx-background-radius: 10;">
-        <Label text="Username:" style="-fx-font-size: 14px;"/>
-        <TextField fx:id="usernameField" promptText="Enter username" prefWidth="300"/>
+        <Label text="Email:" style="-fx-font-size: 14px;"/>
+        <TextField fx:id="emailField" promptText="Enter email" prefWidth="300"/>
 
         <Label text="Password:" style="-fx-font-size: 14px;"/>
         <PasswordField fx:id="passwordField" promptText="Enter password" prefWidth="300"/>

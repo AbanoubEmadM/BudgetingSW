@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.a2.ui.AddContributionController"
+      spacing="14"
+      style="-fx-padding: 22; -fx-min-width: 440;">
+
+    <Label fx:id="goalTitleLabel" text="Add contribution" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <TabPane fx:id="modeTabs" tabClosingPolicy="UNAVAILABLE">
+        <Tab text="Manual amount">
+            <VBox spacing="10" style="-fx-padding: 12;">
+                <Label text="Amount to add toward this goal:"/>
+                <TextField fx:id="manualAmountField" promptText="0.00"/>
+            </VBox>
+        </Tab>
+        <Tab text="Link income transaction">
+            <VBox spacing="10" style="-fx-padding: 12;">
+                <Label text="Apply full amount of an income transaction (each transaction can only be linked once):" wrapText="true"/>
+                <ComboBox fx:id="transactionComboBox" maxWidth="Infinity" promptText="Select transaction"/>
+            </VBox>
+        </Tab>
+    </TabPane>
+
+    <Label fx:id="errorLabel" managed="false" visible="false" wrapText="true" style="-fx-text-fill: #c62828;"/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Apply" onAction="#handleApply" prefWidth="100"
+                style="-fx-background-color: #FF9800; -fx-text-fill: white;"/>
+        <Button text="Cancel" onAction="#handleCancel" prefWidth="100"
+                style="-fx-background-color: #9E9E9E; -fx-text-fill: white;"/>
+    </HBox>
+</VBox>

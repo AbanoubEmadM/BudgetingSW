@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.a2.ui.CreateGoalController"
+      spacing="14"
+      style="-fx-padding: 22; -fx-min-width: 420;">
+
+    <Label fx:id="titleLabel" text="Create Goal" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints minWidth="130" prefWidth="140"/>
+            <ColumnConstraints minWidth="220" hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <Label text="Goal name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="nameField" promptText="e.g. Vacation fund" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Target amount:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="targetField" promptText="0.00" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Deadline:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="deadlinePicker" GridPane.rowIndex="2" GridPane.columnIndex="1" maxWidth="Infinity"/>
+
+        <Label text="Initial saved (optional):" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="initialField" promptText="0 — leave blank for none" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Label fx:id="errorLabel" managed="false" visible="false" wrapText="true" style="-fx-text-fill: #c62828;"/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Save" onAction="#handleSave" prefWidth="100"
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        <Button text="Cancel" onAction="#handleCancel" prefWidth="100"
+                style="-fx-background-color: #9E9E9E; -fx-text-fill: white;"/>
+    </HBox>
+</VBox>

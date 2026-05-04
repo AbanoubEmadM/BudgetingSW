@@ -88,6 +88,11 @@
                     </VBox>
                 </Tab>
 
+                <!-- Financial Goals Tab -->
+                <Tab text="Financial Goals" closable="false">
+                    <fx:include source="goals.fxml"/>
+                </Tab>
+
                 <!-- Reports Tab -->
                 <Tab text="Monthly Report" closable="false">
                     <VBox spacing="10" style="-fx-padding: 10;">

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.a2.ui.GoalController"
+      spacing="12"
+      style="-fx-padding: 14; -fx-background-color: #fafafa;">
+
+    <Label text="Financial Goals" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #1565C0;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="Add Goal" onAction="#handleAddGoal"
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        <Button text="Edit Selected" onAction="#handleEditGoal"
+                style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+        <Button text="Delete Selected" onAction="#handleDeleteGoal"
+                style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+        <Button text="Add Contribution" onAction="#handleAddContribution"
+                style="-fx-background-color: #FF9800; -fx-text-fill: white;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="Refresh" onAction="#handleRefresh"
+                style="-fx-background-color: #607D8B; -fx-text-fill: white;"/>
+    </HBox>
+
+    <TableView fx:id="goalsTable" VBox.vgrow="ALWAYS" prefHeight="400">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Goal" prefWidth="160"/>
+            <TableColumn fx:id="targetColumn" text="Target" prefWidth="100"/>
+            <TableColumn fx:id="savedColumn" text="Saved" prefWidth="100"/>
+            <TableColumn fx:id="deadlineColumn" text="Deadline" prefWidth="110"/>
+            <TableColumn fx:id="monthlyColumn" text="Est. / month" prefWidth="110"/>
+            <TableColumn fx:id="percentColumn" prefWidth="60"/>
+            <TableColumn fx:id="progressColumn" text="Progress" prefWidth="180"/>
+        </columns>
+    </TableView>
+
+    <Label text="Tip: select a goal, then add a manual contribution or link an income transaction."
+           wrapText="true" style="-fx-text-fill: #546E7C;"/>
+</VBox>

@@ -9,9 +9,11 @@ import java.util.Optional;
 
 public class UserDAO {
     private final Connection connection;
+
     public UserDAO() {
         this.connection = DatabaseManager.getInstance().getConnection();
     }
+
     public void createUser(String email, String passwordHash) throws SQLException {
         String sql = "INSERT INTO users (email, password_hash) VALUES (?, ?)";
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
@@ -20,6 +22,7 @@ public class UserDAO {
             pstmt.executeUpdate();
         }
     }
+
     public Optional<User> findByEmail(String email) throws SQLException {
         String sql = "SELECT * FROM users WHERE email = ?";
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
@@ -32,6 +35,7 @@ public class UserDAO {
         }
         return Optional.empty();
     }
+
     public Optional<User> findById(int id) throws SQLException {
         String sql = "SELECT * FROM users WHERE id = ?";
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
@@ -47,7 +51,7 @@ public class UserDAO {
     private User mapResultSetToUser(ResultSet rs) throws SQLException {
         User user = new User();
         user.setId(rs.getInt("id"));
-        user.setUsername(rs.getString("username"));
+        user.setEmail(rs.getString("email"));
         user.setPasswordHash(rs.getString("password_hash"));
 
         Timestamp timestamp = rs.getTimestamp("created_at");

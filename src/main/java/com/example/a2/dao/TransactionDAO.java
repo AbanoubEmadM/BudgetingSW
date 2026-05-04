@@ -53,6 +53,24 @@ public class TransactionDAO {
             pstmt.executeUpdate();
         }
     }
+
+    public Transaction findById(int transactionId) throws SQLException {
+        String sql = """
+            SELECT t.*, c.name as category_name
+            FROM transactions t
+            JOIN categories c ON t.category_id = c.id
+            WHERE t.id = ?
+            """;
+        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+            pstmt.setInt(1, transactionId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return mapResultSetToTransaction(rs);
+                }
+            }
+        }
+        return null;
+    }
     public List<Transaction> getTransactionsByUserAndMonth(int userId, int month, int year) throws SQLException {
         List<Transaction> transactions = new ArrayList<>();
         String sql = """
