@@ -12,19 +12,37 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Controller for {@code login.fxml}: email/password entry, registration, and navigation to the dashboard.
+ * Error feedback uses inline styles on {@link #errorLabel} ({@code -fx-text-fill} red/green); no CSS style classes.
+ *
+ * @author Abanoub
+ * @version 1.0
+ * @see DashboardController
+ * @see AuthenticationManager
+ */
 public class LoginController {
 
+    /** Email text field from FXML (default JavaFX styling). */
     @FXML
     private TextField emailField;
 
+    /** Password field from FXML. */
     @FXML
     private PasswordField passwordField;
 
+    /** Inline-styled validation / status message area. */
     @FXML
     private Label errorLabel;
 
+    /** Global auth/session singleton. */
     private final AuthenticationManager authManager = AuthenticationManager.getInstance();
 
+    /**
+     * [FXML] Attempts login with trimmed email and password; opens dashboard on success.
+     *
+     * @return nothing
+     */
     @FXML
     private void handleLogin() {
         String email = emailField.getText().trim();
@@ -46,6 +64,11 @@ public class LoginController {
         }
     }
 
+    /**
+     * [FXML] Registers a new account with minimum password length; shows success or error on {@link #errorLabel}.
+     *
+     * @return nothing
+     */
     @FXML
     private void handleRegister() {
         String email = emailField.getText().trim();
@@ -70,16 +93,27 @@ public class LoginController {
                 showError("Email already exists");
             }
         } catch (Exception e) {
-            showError( e.getMessage());
+            showError(e.getMessage());
         }
     }
 
+    /**
+     * Shows an error or status message with red text styling.
+     *
+     * @param message text to display
+     * @return nothing
+     */
     private void showError(String message) {
         errorLabel.setText(message);
         errorLabel.setVisible(true);
         errorLabel.setStyle("-fx-text-fill: red;");
     }
 
+    /**
+     * Loads {@code dashboard.fxml} into the current {@link Stage}.
+     *
+     * @return nothing
+     */
     private void openDashboard() {
         try {
             var url = getClass().getResource("/com/example/a2/fxml/dashboard.fxml");

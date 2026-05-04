@@ -1,0 +1,216 @@
+\doxysection{com.\+example.\+a2.\+service.\+Budget\+Service Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_budget_service}{}\label{classcom_1_1example_1_1a2_1_1service_1_1_budget_service}\index{com.example.a2.service.BudgetService@{com.example.a2.service.BudgetService}}
+
+
+Application service for monthly budgets, persistence, and threshold-\/based alerts.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_a2f6a23705e1e4b339c2ba67e8428551a}\label{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_a2f6a23705e1e4b339c2ba67e8428551a} 
+{\bfseries Budget\+Service} ()
+\begin{DoxyCompactList}\small\item\em Constructs the service with default {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy}{Threshold\+Alert\+Strategy}} at 80\% usage. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_aa8b9b9dc575aaba5c51f86531ac9392d}{Budget\+Service}} (\doxymbox{\hyperlink{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy}{Alert\+Strategy}} alert\+Strategy)
+\begin{DoxyCompactList}\small\item\em Constructs the service with a custom alert strategy (e.\+g. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_acf8c10610aba43a6d8b80f611da57d5a}{set\+Budget}} (int user\+Id, int category\+Id, double amount, int month, int year)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Creates or updates the budget amount for a user/\+category/\+month. \end{DoxyCompactList}\item 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{Budget}} $>$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_a24cbd457c587afd552713150158e2989}{get\+Monthly\+Budgets}} (int user\+Id, int month, int year)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Loads all budgets for the dashboard month with spent totals. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_abf2471c55c7ddee4765de26490347c76}{check\+Budget\+Alert}} (int user\+Id, int category\+Id, int month, int year, \doxymbox{\hyperlink{interfacecom_1_1example_1_1a2_1_1util_1_1_notification_sender}{Notification\+Sender}} notification\+Sender)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Evaluates whether a budget alert should be sent after an expense (strategy + optional sender). \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_ad41c80b017a7844a645d1f82a851d59c}{get\+Total\+Budget}} (int user\+Id, int month, int year)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Sums budget caps across categories for the month. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_aeea44dae1f9a3775f3ae3568766ca077}{get\+Total\+Spent}} (int user\+Id, int month, int year)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Sums spent amounts across categories for the month (from joined budget rows). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Application service for monthly budgets, persistence, and threshold-\/based alerts. 
+
+\begin{DoxyAuthor}{Author}
+Abanoub 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o}{com.\+example.\+a2.\+dao.\+Budget\+DAO} 
+
+\doxylink{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy}{Alert\+Strategy} 
+\end{DoxySeeAlso}
+
+
+\label{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_doc-constructors}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_aa8b9b9dc575aaba5c51f86531ac9392d}\index{com.example.a2.service.BudgetService@{com.example.a2.service.BudgetService}!BudgetService@{BudgetService}}
+\index{BudgetService@{BudgetService}!com.example.a2.service.BudgetService@{com.example.a2.service.BudgetService}}
+\doxysubsubsection{\texorpdfstring{BudgetService()}{BudgetService()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_aa8b9b9dc575aaba5c51f86531ac9392d} 
+com.\+example.\+a2.\+service.\+Budget\+Service.\+Budget\+Service (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy}{Alert\+Strategy}}}]{alert\+Strategy}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the service with a custom alert strategy (e.\+g. 
+
+for testing).
+
+
+\begin{DoxyParams}{Parameters}
+{\em alert\+Strategy} & non-\/null strategy implementation \\
+\hline
+\end{DoxyParams}
+
+
+\label{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_doc-func-members}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_abf2471c55c7ddee4765de26490347c76}\index{com.example.a2.service.BudgetService@{com.example.a2.service.BudgetService}!checkBudgetAlert@{checkBudgetAlert}}
+\index{checkBudgetAlert@{checkBudgetAlert}!com.example.a2.service.BudgetService@{com.example.a2.service.BudgetService}}
+\doxysubsubsection{\texorpdfstring{checkBudgetAlert()}{checkBudgetAlert()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_abf2471c55c7ddee4765de26490347c76} 
+void com.\+example.\+a2.\+service.\+Budget\+Service.\+check\+Budget\+Alert (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{int}]{category\+Id}{, }\item[{int}]{month}{, }\item[{int}]{year}{, }\item[{\doxymbox{\hyperlink{interfacecom_1_1example_1_1a2_1_1util_1_1_notification_sender}{Notification\+Sender}}}]{notification\+Sender}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Evaluates whether a budget alert should be sent after an expense (strategy + optional sender). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+{\em category\+Id} & affected category \\
+\hline
+{\em month} & calendar month of the expense \\
+\hline
+{\em year} & calendar year of the expense \\
+\hline
+{\em notification\+Sender} & channel used when an alert fires \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & if budget lookup fails \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_a24cbd457c587afd552713150158e2989}\index{com.example.a2.service.BudgetService@{com.example.a2.service.BudgetService}!getMonthlyBudgets@{getMonthlyBudgets}}
+\index{getMonthlyBudgets@{getMonthlyBudgets}!com.example.a2.service.BudgetService@{com.example.a2.service.BudgetService}}
+\doxysubsubsection{\texorpdfstring{getMonthlyBudgets()}{getMonthlyBudgets()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_a24cbd457c587afd552713150158e2989} 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{Budget}} $>$ com.\+example.\+a2.\+service.\+Budget\+Service.\+get\+Monthly\+Budgets (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{int}]{month}{, }\item[{int}]{year}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Loads all budgets for the dashboard month with spent totals. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+{\em month} & calendar month \\
+\hline
+{\em year} & calendar year \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of budgets for tables 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_ad41c80b017a7844a645d1f82a851d59c}\index{com.example.a2.service.BudgetService@{com.example.a2.service.BudgetService}!getTotalBudget@{getTotalBudget}}
+\index{getTotalBudget@{getTotalBudget}!com.example.a2.service.BudgetService@{com.example.a2.service.BudgetService}}
+\doxysubsubsection{\texorpdfstring{getTotalBudget()}{getTotalBudget()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_ad41c80b017a7844a645d1f82a851d59c} 
+double com.\+example.\+a2.\+service.\+Budget\+Service.\+get\+Total\+Budget (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{int}]{month}{, }\item[{int}]{year}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Sums budget caps across categories for the month. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+{\em month} & calendar month \\
+\hline
+{\em year} & calendar year \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+total budgeted amount 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_aeea44dae1f9a3775f3ae3568766ca077}\index{com.example.a2.service.BudgetService@{com.example.a2.service.BudgetService}!getTotalSpent@{getTotalSpent}}
+\index{getTotalSpent@{getTotalSpent}!com.example.a2.service.BudgetService@{com.example.a2.service.BudgetService}}
+\doxysubsubsection{\texorpdfstring{getTotalSpent()}{getTotalSpent()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_aeea44dae1f9a3775f3ae3568766ca077} 
+double com.\+example.\+a2.\+service.\+Budget\+Service.\+get\+Total\+Spent (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{int}]{month}{, }\item[{int}]{year}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Sums spent amounts across categories for the month (from joined budget rows). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+{\em month} & calendar month \\
+\hline
+{\em year} & calendar year \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+total spent across budgeted categories 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_acf8c10610aba43a6d8b80f611da57d5a}\index{com.example.a2.service.BudgetService@{com.example.a2.service.BudgetService}!setBudget@{setBudget}}
+\index{setBudget@{setBudget}!com.example.a2.service.BudgetService@{com.example.a2.service.BudgetService}}
+\doxysubsubsection{\texorpdfstring{setBudget()}{setBudget()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_budget_service_acf8c10610aba43a6d8b80f611da57d5a} 
+void com.\+example.\+a2.\+service.\+Budget\+Service.\+set\+Budget (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{int}]{category\+Id}{, }\item[{double}]{amount}{, }\item[{int}]{month}{, }\item[{int}]{year}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Creates or updates the budget amount for a user/\+category/\+month. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+{\em category\+Id} & expense category \\
+\hline
+{\em amount} & budget cap \\
+\hline
+{\em month} & calendar month \\
+\hline
+{\em year} & calendar year \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on persistence failure \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+service/\+Budget\+Service.\+java\end{DoxyCompactItemize}

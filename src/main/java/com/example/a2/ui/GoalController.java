@@ -18,24 +18,47 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Goals tab: list, progress, contributions, create / edit / delete.
+ * Controller for {@code goals.fxml}: lists goals with {@link ProgressBar} progress, monthly estimate, and CRUD dialogs.
+ * Table cells use programmatic formatting; {@link ProgressBar} max width is set in code (no CSS style class).
+ *
+ * @author Abanoub
+ * @version 1.0
+ * @see GoalService
+ * @see CreateGoalController
+ * @see AddContributionController
  */
 public class GoalController {
 
+    /** Main goals table bound to {@link #goals}. */
     @FXML private TableView<Goal> goalsTable;
+    /** Goal title column (uses {@link Goal#nameProperty()} to avoid JPMS reflection issues). */
     @FXML private TableColumn<Goal, String> nameColumn;
+    /** Target amount column. */
     @FXML private TableColumn<Goal, Double> targetColumn;
+    /** Saved amount column. */
     @FXML private TableColumn<Goal, Double> savedColumn;
+    /** Deadline as ISO string. */
     @FXML private TableColumn<Goal, String> deadlineColumn;
+    /** Estimated monthly savings needed. */
     @FXML private TableColumn<Goal, Void> monthlyColumn;
+    /** Progress percentage text column. */
     @FXML private TableColumn<Goal, Void> percentColumn;
+    /** {@link ProgressBar} column. */
     @FXML private TableColumn<Goal, Void> progressColumn;
 
+    /** Current session. */
     private final AuthenticationManager authManager = AuthenticationManager.getInstance();
+    /** Goal operations. */
     private final GoalService goalService = new GoalService();
 
+    /** Observable list with property extractors for row invalidation. */
     private ObservableList<Goal> goals;
 
+    /**
+     * [FXML] Wires table columns, sets "%" header in code (FXML cannot start with {@code %}), and loads data.
+     *
+     * @return nothing
+     */
     @FXML
     private void initialize() {
         goals = FXCollections.observableArrayList(goal -> new javafx.beans.Observable[]{
@@ -46,10 +69,8 @@ public class GoalController {
         });
         goalsTable.setItems(goals);
 
-        // Cannot set text="%" in FXML: leading % is treated as a resource-bundle key.
         percentColumn.setText("%");
 
-        // Avoid PropertyValueFactory: JPMS does not export model to javafx.controls, so reflection fails.
         nameColumn.setCellValueFactory(cd -> cd.getValue().nameProperty());
 
         targetColumn.setCellValueFactory(cd -> cd.getValue().targetAmountProperty().asObject());
@@ -64,6 +85,12 @@ public class GoalController {
                 cd.getValue().deadlineProperty()));
 
         monthlyColumn.setCellFactory(col -> new TableCell<>() {
+            /**
+             * Renders estimated monthly savings from {@link GoalService#monthlySavingsNeeded(double, double, java.time.LocalDate)}.
+             *
+             * @param item  unused (void column)
+             * @param empty whether the cell is empty
+             */
             @Override
             protected void updateItem(Void item, boolean empty) {
                 super.updateItem(item, empty);
@@ -78,6 +105,12 @@ public class GoalController {
         });
 
         percentColumn.setCellFactory(col -> new TableCell<>() {
+            /**
+             * Renders {@link Goal#getProgressPercent()} as a whole percent.
+             *
+             * @param item  unused
+             * @param empty row empty flag
+             */
             @Override
             protected void updateItem(Void item, boolean empty) {
                 super.updateItem(item, empty);
@@ -91,12 +124,19 @@ public class GoalController {
         });
 
         progressColumn.setCellFactory(col -> new TableCell<>() {
+            /** Progress control bound to saved/target ratio (clamped to 1). */
             private final ProgressBar bar = new ProgressBar();
 
             {
                 bar.setMaxWidth(Double.MAX_VALUE);
             }
 
+            /**
+             * Binds {@link ProgressBar#progressProperty()} to goal saved/target observables.
+             *
+             * @param item  unused
+             * @param empty row empty flag
+             */
             @Override
             protected void updateItem(Void item, boolean empty) {
                 super.updateItem(item, empty);
@@ -117,8 +157,19 @@ public class GoalController {
         handleRefresh();
     }
 
+    /**
+     * Creates a {@link TableCell} that formats {@link Double} amounts as currency.
+     *
+     * @return cell factory instance
+     */
     private TableCell<Goal, Double> currencyCell() {
         return new TableCell<>() {
+            /**
+             * Formats money with two decimal places.
+             *
+             * @param amount bound value
+             * @param empty  empty flag
+             */
             @Override
             protected void updateItem(Double amount, boolean empty) {
                 super.updateItem(amount, empty);
@@ -131,6 +182,11 @@ public class GoalController {
         };
     }
 
+    /**
+     * [FXML] Reloads goals for the logged-in user from {@link GoalService#loadGoalsForUser(int)}.
+     *
+     * @return nothing
+     */
     @FXML
     private void handleRefresh() {
         try {
@@ -143,11 +199,21 @@ public class GoalController {
         }
     }
 
+    /**
+     * [FXML] Opens the create-goal dialog.
+     *
+     * @return nothing
+     */
     @FXML
     private void handleAddGoal() {
         openGoalDialog(null);
     }
 
+    /**
+     * [FXML] Opens the edit dialog for the selected goal.
+     *
+     * @return nothing
+     */
     @FXML
     private void handleEditGoal() {
         Goal selected = goalsTable.getSelectionModel().getSelectedItem();
@@ -158,6 +224,12 @@ public class GoalController {
         openGoalDialog(selected);
     }
 
+    /**
+     * Opens {@code create-goal.fxml} in create or edit mode.
+     *
+     * @param existing {@code null} to create, otherwise the goal to edit
+     * @return nothing
+     */
     private void openGoalDialog(Goal existing) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/a2/fxml/create-goal.fxml"));
@@ -180,6 +252,11 @@ public class GoalController {
         }
     }
 
+    /**
+     * [FXML] Deletes the selected goal after confirmation.
+     *
+     * @return nothing
+     */
     @FXML
     private void handleDeleteGoal() {
         Goal selected = goalsTable.getSelectionModel().getSelectedItem();
@@ -203,6 +280,11 @@ public class GoalController {
         });
     }
 
+    /**
+     * [FXML] Opens {@code add-contribution.fxml} for the selected goal.
+     *
+     * @return nothing
+     */
     @FXML
     private void handleAddContribution() {
         Goal selected = goalsTable.getSelectionModel().getSelectedItem();
@@ -227,6 +309,14 @@ public class GoalController {
         }
     }
 
+    /**
+     * Shows a modal {@link Alert}.
+     *
+     * @param title   dialog title
+     * @param message body text
+     * @param type    alert severity
+     * @return nothing
+     */
     private void showAlert(String title, String message, Alert.AlertType type) {
         Alert alert = new Alert(type);
         alert.setTitle(title);

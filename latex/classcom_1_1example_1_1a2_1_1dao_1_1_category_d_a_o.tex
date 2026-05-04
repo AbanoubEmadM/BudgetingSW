@@ -1,0 +1,84 @@
+\doxysection{com.\+example.\+a2.\+dao.\+Category\+DAO Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_category_d_a_o}{}\label{classcom_1_1example_1_1a2_1_1dao_1_1_category_d_a_o}\index{com.example.a2.dao.CategoryDAO@{com.example.a2.dao.CategoryDAO}}
+
+
+Data access for {\ttfamily categories}:\+ default and filtered lists for UI pickers.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_category_d_a_o_a0c2fc68b693a6c32ffc37f461dcb122b}\label{classcom_1_1example_1_1a2_1_1dao_1_1_category_d_a_o_a0c2fc68b693a6c32ffc37f461dcb122b} 
+{\bfseries Category\+DAO} ()
+\begin{DoxyCompactList}\small\item\em Constructs the DAO with the singleton connection. \end{DoxyCompactList}\item 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_category}{Category}} $>$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_category_d_a_o_a49b8ba910227445dad43dbadd834c4fa}{get\+All\+Categories}} ()  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Loads all categories ordered by type and name. \end{DoxyCompactList}\item 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_category}{Category}} $>$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_category_d_a_o_a41b330fd6655ac8dd3ada4c93166a5a3}{get\+Categories\+By\+Type}} (\doxymbox{\hyperlink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type}{Transaction\+Type}} type)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Loads categories filtered by income or expense type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Data access for {\ttfamily categories}:\+ default and filtered lists for UI pickers. 
+
+\begin{DoxyAuthor}{Author}
+Abanoub 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classcom_1_1example_1_1a2_1_1model_1_1_category}{com.\+example.\+a2.\+model.\+Category} 
+
+\doxylink{classcom_1_1example_1_1a2_1_1util_1_1_database_manager}{com.\+example.\+a2.\+util.\+Database\+Manager} 
+\end{DoxySeeAlso}
+
+
+\label{classcom_1_1example_1_1a2_1_1dao_1_1_category_d_a_o_doc-func-members}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_category_d_a_o_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_category_d_a_o_a49b8ba910227445dad43dbadd834c4fa}\index{com.example.a2.dao.CategoryDAO@{com.example.a2.dao.CategoryDAO}!getAllCategories@{getAllCategories}}
+\index{getAllCategories@{getAllCategories}!com.example.a2.dao.CategoryDAO@{com.example.a2.dao.CategoryDAO}}
+\doxysubsubsection{\texorpdfstring{getAllCategories()}{getAllCategories()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_category_d_a_o_a49b8ba910227445dad43dbadd834c4fa} 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_category}{Category}} $>$ com.\+example.\+a2.\+dao.\+Category\+DAO.\+get\+All\+Categories (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Loads all categories ordered by type and name. 
+
+\begin{DoxyReturn}{Returns}
+mutable list of categories 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_category_d_a_o_a41b330fd6655ac8dd3ada4c93166a5a3}\index{com.example.a2.dao.CategoryDAO@{com.example.a2.dao.CategoryDAO}!getCategoriesByType@{getCategoriesByType}}
+\index{getCategoriesByType@{getCategoriesByType}!com.example.a2.dao.CategoryDAO@{com.example.a2.dao.CategoryDAO}}
+\doxysubsubsection{\texorpdfstring{getCategoriesByType()}{getCategoriesByType()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_category_d_a_o_a41b330fd6655ac8dd3ada4c93166a5a3} 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_category}{Category}} $>$ com.\+example.\+a2.\+dao.\+Category\+DAO.\+get\+Categories\+By\+Type (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type}{Transaction\+Type}}}]{type}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Loads categories filtered by income or expense type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & INCOME or EXPENSE filter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+categories of the requested type 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+dao/\+Category\+DAO.\+java\end{DoxyCompactItemize}

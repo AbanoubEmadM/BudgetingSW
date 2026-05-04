@@ -1,0 +1,84 @@
+\doxysection{com.\+example.\+a2.\+util.\+Database\+Manager Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1util_1_1_database_manager}{}\label{classcom_1_1example_1_1a2_1_1util_1_1_database_manager}\index{com.example.a2.util.DatabaseManager@{com.example.a2.util.DatabaseManager}}
+
+
+Singleton that owns the SQLite {\ttfamily \doxylink{}{Connection}}, creates core tables, runs lightweight migrations, and seeds default categories.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Connection \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1util_1_1_database_manager_a714af8f953ed66ca4e93ab1d9f065f5b}{get\+Connection}} ()
+\begin{DoxyCompactList}\small\item\em Exposes the shared JDBC connection to DAO classes. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1util_1_1_database_manager_a98f966c29d73ecd3da8976310633a700}{close}} ()
+\begin{DoxyCompactList}\small\item\em Closes the JDBC connection if still open (typically from {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1_hello_application_aa187693d171476fe30c02a676c92eea6}{com.\+example.\+a2.\+Hello\+Application\+\#stop()}}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static synchronized Database\+Manager \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1util_1_1_database_manager_a61a00056f956fbe8d2e162a0b823ed81}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Returns the process-\/wide {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1util_1_1_database_manager}{Database\+Manager}} (double-\/checked locking pattern). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Singleton that owns the SQLite {\ttfamily \doxylink{}{Connection}}, creates core tables, runs lightweight migrations, and seeds default categories. 
+
+JDBC URL:\+ {\ttfamily jdbc:\+sqlite:\+budget.\+db} (project working directory).
+
+\begin{DoxyAuthor}{Author}
+Abanoub 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classcom_1_1example_1_1a2_1_1_hello_application}{com.\+example.\+a2.\+Hello\+Application} 
+\end{DoxySeeAlso}
+
+
+\label{classcom_1_1example_1_1a2_1_1util_1_1_database_manager_doc-func-members}
+\Hypertarget{classcom_1_1example_1_1a2_1_1util_1_1_database_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1util_1_1_database_manager_a98f966c29d73ecd3da8976310633a700}\index{com.example.a2.util.DatabaseManager@{com.example.a2.util.DatabaseManager}!close@{close}}
+\index{close@{close}!com.example.a2.util.DatabaseManager@{com.example.a2.util.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1util_1_1_database_manager_a98f966c29d73ecd3da8976310633a700} 
+void com.\+example.\+a2.\+util.\+Database\+Manager.\+close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Closes the JDBC connection if still open (typically from {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1_hello_application_aa187693d171476fe30c02a676c92eea6}{com.\+example.\+a2.\+Hello\+Application\+\#stop()}}). 
+
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1util_1_1_database_manager_a714af8f953ed66ca4e93ab1d9f065f5b}\index{com.example.a2.util.DatabaseManager@{com.example.a2.util.DatabaseManager}!getConnection@{getConnection}}
+\index{getConnection@{getConnection}!com.example.a2.util.DatabaseManager@{com.example.a2.util.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getConnection()}{getConnection()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1util_1_1_database_manager_a714af8f953ed66ca4e93ab1d9f065f5b} 
+Connection com.\+example.\+a2.\+util.\+Database\+Manager.\+get\+Connection (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Exposes the shared JDBC connection to DAO classes. 
+
+\begin{DoxyReturn}{Returns}
+live SQLite connection 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1util_1_1_database_manager_a61a00056f956fbe8d2e162a0b823ed81}\index{com.example.a2.util.DatabaseManager@{com.example.a2.util.DatabaseManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!com.example.a2.util.DatabaseManager@{com.example.a2.util.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1util_1_1_database_manager_a61a00056f956fbe8d2e162a0b823ed81} 
+synchronized Database\+Manager com.\+example.\+a2.\+util.\+Database\+Manager.\+get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the process-\/wide {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1util_1_1_database_manager}{Database\+Manager}} (double-\/checked locking pattern). 
+
+\begin{DoxyReturn}{Returns}
+singleton instance 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+util/\+Database\+Manager.\+java\end{DoxyCompactItemize}

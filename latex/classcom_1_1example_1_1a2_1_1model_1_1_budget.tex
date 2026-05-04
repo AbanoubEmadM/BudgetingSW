@@ -1,0 +1,355 @@
+\doxysection{com.\+example.\+a2.\+model.\+Budget Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget}{}\label{classcom_1_1example_1_1a2_1_1model_1_1_budget}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+
+
+Monthly spending limit per category for a user, with computed spent and remaining values.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_a6b852041d67172c1713e0733bc60f0c8}\label{classcom_1_1example_1_1a2_1_1model_1_1_budget_a6b852041d67172c1713e0733bc60f0c8} 
+{\bfseries Budget} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty budget for DAO mapping. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_a259a7554fb0be88606ecbb8afbbaec6e}{Budget}} (int user\+Id, int category\+Id, double amount, int month, int year)
+\begin{DoxyCompactList}\small\item\em Constructs a budget row without spent totals (filled by service/\+\+DAO). \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_a9fd5e9a0440c895f2042b144a670855b}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Returns the budget row id. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_a4b2e3683030994237c22b204ff865d9a}{set\+Id}} (int id)
+\begin{DoxyCompactList}\small\item\em Sets the budget row id. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_a42bcbf513f1d6830efb5af5baf5b640e}{get\+User\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Returns the owning user id. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_a4465fdbaaea421768a5ee74c793439cc}{set\+User\+Id}} (int user\+Id)
+\begin{DoxyCompactList}\small\item\em Sets the owning user id. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_a23ac4d42df380b036a31aa86a3400a48}{get\+Category\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Returns the category id. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_a82e84aeb9cb3d56fca534964f684ff46}{set\+Category\+Id}} (int category\+Id)
+\begin{DoxyCompactList}\small\item\em Sets the category id. \end{DoxyCompactList}\item 
+String \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_aab2c75e8cb3a54aea3ee2a52233fa3b3}{get\+Category\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returns the category display name. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_aca2969dd710a362417ac8b3c940f9bc6}{set\+Category\+Name}} (String category\+Name)
+\begin{DoxyCompactList}\small\item\em Sets the category display name. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_ad7b8ed11e2578dc9bb1f4d2a4ea6ae8f}{get\+Amount}} ()
+\begin{DoxyCompactList}\small\item\em Returns the budget limit amount. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_ac304384fc6062c8d9814910265a73b43}{set\+Amount}} (double amount)
+\begin{DoxyCompactList}\small\item\em Sets the budget limit amount. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_a7279a884240c48b5c2346b5e74dcf2b8}{get\+Month}} ()
+\begin{DoxyCompactList}\small\item\em Returns the calendar month. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_abec378fc8107618f8d30596c8fbef94e}{set\+Month}} (int month)
+\begin{DoxyCompactList}\small\item\em Sets the calendar month. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_a5e5ce85362d424f371ff8708863e123d}{get\+Year}} ()
+\begin{DoxyCompactList}\small\item\em Returns the calendar year. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_abcdf998889848256efe524b430040522}{set\+Year}} (int year)
+\begin{DoxyCompactList}\small\item\em Sets the calendar year. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_a46d095b7b322acbd7277ff3986edb663}{get\+Spent}} ()
+\begin{DoxyCompactList}\small\item\em Returns total spent in this category for the month. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_aec866816959abb8125080494a1bf939e}{set\+Spent}} (double spent)
+\begin{DoxyCompactList}\small\item\em Sets total spent (typically from {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o}{com.\+example.\+a2.\+dao.\+Transaction\+DAO}}). \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_aeb832a66795b8e2fd817819c8118bdf6}{get\+Remaining}} ()
+\begin{DoxyCompactList}\small\item\em Computes remaining budget as {\ttfamily amount -\/ spent}. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget_a75c38334720b2fc70736bee5fbe1e42f}{get\+Percentage\+Used}} ()
+\begin{DoxyCompactList}\small\item\em Computes percentage of budget used ({\ttfamily spent /\+ amount \texorpdfstring{$\ast$}{*} 100}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Monthly spending limit per category for a user, with computed spent and remaining values. 
+
+\begin{DoxyAuthor}{Author}
+Abanoub 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o}{com.\+example.\+a2.\+dao.\+Budget\+DAO} 
+
+\doxylink{classcom_1_1example_1_1a2_1_1service_1_1_budget_service}{com.\+example.\+a2.\+service.\+Budget\+Service} 
+\end{DoxySeeAlso}
+
+
+\label{classcom_1_1example_1_1a2_1_1model_1_1_budget_doc-constructors}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_a259a7554fb0be88606ecbb8afbbaec6e}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!Budget@{Budget}}
+\index{Budget@{Budget}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{Budget()}{Budget()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_a259a7554fb0be88606ecbb8afbbaec6e} 
+com.\+example.\+a2.\+model.\+Budget.\+Budget (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{int}]{category\+Id}{, }\item[{double}]{amount}{, }\item[{int}]{month}{, }\item[{int}]{year}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a budget row without spent totals (filled by service/\+\+DAO). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+{\em category\+Id} & category foreign key \\
+\hline
+{\em amount} & budget limit \\
+\hline
+{\em month} & month number \\
+\hline
+{\em year} & year number \\
+\hline
+\end{DoxyParams}
+
+
+\label{classcom_1_1example_1_1a2_1_1model_1_1_budget_doc-func-members}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_ad7b8ed11e2578dc9bb1f4d2a4ea6ae8f}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!getAmount@{getAmount}}
+\index{getAmount@{getAmount}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{getAmount()}{getAmount()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_ad7b8ed11e2578dc9bb1f4d2a4ea6ae8f} 
+double com.\+example.\+a2.\+model.\+Budget.\+get\+Amount (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the budget limit amount. 
+
+\begin{DoxyReturn}{Returns}
+cap for the month 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_a23ac4d42df380b036a31aa86a3400a48}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!getCategoryId@{getCategoryId}}
+\index{getCategoryId@{getCategoryId}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{getCategoryId()}{getCategoryId()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_a23ac4d42df380b036a31aa86a3400a48} 
+int com.\+example.\+a2.\+model.\+Budget.\+get\+Category\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the category id. 
+
+\begin{DoxyReturn}{Returns}
+category foreign key 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_aab2c75e8cb3a54aea3ee2a52233fa3b3}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!getCategoryName@{getCategoryName}}
+\index{getCategoryName@{getCategoryName}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{getCategoryName()}{getCategoryName()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_aab2c75e8cb3a54aea3ee2a52233fa3b3} 
+String com.\+example.\+a2.\+model.\+Budget.\+get\+Category\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the category display name. 
+
+\begin{DoxyReturn}{Returns}
+joined category label 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_a9fd5e9a0440c895f2042b144a670855b}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!getId@{getId}}
+\index{getId@{getId}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_a9fd5e9a0440c895f2042b144a670855b} 
+int com.\+example.\+a2.\+model.\+Budget.\+get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the budget row id. 
+
+\begin{DoxyReturn}{Returns}
+primary key 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_a7279a884240c48b5c2346b5e74dcf2b8}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!getMonth@{getMonth}}
+\index{getMonth@{getMonth}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{getMonth()}{getMonth()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_a7279a884240c48b5c2346b5e74dcf2b8} 
+int com.\+example.\+a2.\+model.\+Budget.\+get\+Month (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the calendar month. 
+
+\begin{DoxyReturn}{Returns}
+month in range 1–12 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_a75c38334720b2fc70736bee5fbe1e42f}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!getPercentageUsed@{getPercentageUsed}}
+\index{getPercentageUsed@{getPercentageUsed}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{getPercentageUsed()}{getPercentageUsed()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_a75c38334720b2fc70736bee5fbe1e42f} 
+double com.\+example.\+a2.\+model.\+Budget.\+get\+Percentage\+Used (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Computes percentage of budget used ({\ttfamily spent /\+ amount \texorpdfstring{$\ast$}{*} 100}). 
+
+\begin{DoxyReturn}{Returns}
+usage percentage (undefined if {\ttfamily amount == 0} at call site) 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_aeb832a66795b8e2fd817819c8118bdf6}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!getRemaining@{getRemaining}}
+\index{getRemaining@{getRemaining}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{getRemaining()}{getRemaining()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_aeb832a66795b8e2fd817819c8118bdf6} 
+double com.\+example.\+a2.\+model.\+Budget.\+get\+Remaining (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Computes remaining budget as {\ttfamily amount -\/ spent}. 
+
+\begin{DoxyReturn}{Returns}
+dollars left before exceeding cap 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_a46d095b7b322acbd7277ff3986edb663}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!getSpent@{getSpent}}
+\index{getSpent@{getSpent}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{getSpent()}{getSpent()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_a46d095b7b322acbd7277ff3986edb663} 
+double com.\+example.\+a2.\+model.\+Budget.\+get\+Spent (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns total spent in this category for the month. 
+
+\begin{DoxyReturn}{Returns}
+aggregated expense amount 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_a42bcbf513f1d6830efb5af5baf5b640e}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!getUserId@{getUserId}}
+\index{getUserId@{getUserId}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{getUserId()}{getUserId()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_a42bcbf513f1d6830efb5af5baf5b640e} 
+int com.\+example.\+a2.\+model.\+Budget.\+get\+User\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the owning user id. 
+
+\begin{DoxyReturn}{Returns}
+user foreign key 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_a5e5ce85362d424f371ff8708863e123d}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!getYear@{getYear}}
+\index{getYear@{getYear}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{getYear()}{getYear()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_a5e5ce85362d424f371ff8708863e123d} 
+int com.\+example.\+a2.\+model.\+Budget.\+get\+Year (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the calendar year. 
+
+\begin{DoxyReturn}{Returns}
+four-\/digit year 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_ac304384fc6062c8d9814910265a73b43}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!setAmount@{setAmount}}
+\index{setAmount@{setAmount}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{setAmount()}{setAmount()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_ac304384fc6062c8d9814910265a73b43} 
+void com.\+example.\+a2.\+model.\+Budget.\+set\+Amount (\begin{DoxyParamCaption}\item[{double}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Sets the budget limit amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & cap for the month \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_a82e84aeb9cb3d56fca534964f684ff46}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!setCategoryId@{setCategoryId}}
+\index{setCategoryId@{setCategoryId}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{setCategoryId()}{setCategoryId()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_a82e84aeb9cb3d56fca534964f684ff46} 
+void com.\+example.\+a2.\+model.\+Budget.\+set\+Category\+Id (\begin{DoxyParamCaption}\item[{int}]{category\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Sets the category id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em category\+Id} & category foreign key \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_aca2969dd710a362417ac8b3c940f9bc6}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!setCategoryName@{setCategoryName}}
+\index{setCategoryName@{setCategoryName}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{setCategoryName()}{setCategoryName()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_aca2969dd710a362417ac8b3c940f9bc6} 
+void com.\+example.\+a2.\+model.\+Budget.\+set\+Category\+Name (\begin{DoxyParamCaption}\item[{String}]{category\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Sets the category display name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em category\+Name} & label for tables \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_a4b2e3683030994237c22b204ff865d9a}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!setId@{setId}}
+\index{setId@{setId}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_a4b2e3683030994237c22b204ff865d9a} 
+void com.\+example.\+a2.\+model.\+Budget.\+set\+Id (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Sets the budget row id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & primary key \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_abec378fc8107618f8d30596c8fbef94e}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!setMonth@{setMonth}}
+\index{setMonth@{setMonth}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{setMonth()}{setMonth()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_abec378fc8107618f8d30596c8fbef94e} 
+void com.\+example.\+a2.\+model.\+Budget.\+set\+Month (\begin{DoxyParamCaption}\item[{int}]{month}{}\end{DoxyParamCaption})}
+
+
+
+Sets the calendar month. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em month} & month in range 1–12 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_aec866816959abb8125080494a1bf939e}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!setSpent@{setSpent}}
+\index{setSpent@{setSpent}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{setSpent()}{setSpent()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_aec866816959abb8125080494a1bf939e} 
+void com.\+example.\+a2.\+model.\+Budget.\+set\+Spent (\begin{DoxyParamCaption}\item[{double}]{spent}{}\end{DoxyParamCaption})}
+
+
+
+Sets total spent (typically from {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o}{com.\+example.\+a2.\+dao.\+Transaction\+DAO}}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spent} & aggregated expense amount \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_a4465fdbaaea421768a5ee74c793439cc}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!setUserId@{setUserId}}
+\index{setUserId@{setUserId}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{setUserId()}{setUserId()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_a4465fdbaaea421768a5ee74c793439cc} 
+void com.\+example.\+a2.\+model.\+Budget.\+set\+User\+Id (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Sets the owning user id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & user foreign key \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_budget_abcdf998889848256efe524b430040522}\index{com.example.a2.model.Budget@{com.example.a2.model.Budget}!setYear@{setYear}}
+\index{setYear@{setYear}!com.example.a2.model.Budget@{com.example.a2.model.Budget}}
+\doxysubsubsection{\texorpdfstring{setYear()}{setYear()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_budget_abcdf998889848256efe524b430040522} 
+void com.\+example.\+a2.\+model.\+Budget.\+set\+Year (\begin{DoxyParamCaption}\item[{int}]{year}{}\end{DoxyParamCaption})}
+
+
+
+Sets the calendar year. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & four-\/digit year \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+model/\+Budget.\+java\end{DoxyCompactItemize}

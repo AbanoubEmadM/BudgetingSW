@@ -1,0 +1,109 @@
+\doxysection{com.\+example.\+a2.\+Hello\+Application Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1_hello_application}{}\label{classcom_1_1example_1_1a2_1_1_hello_application}\index{com.example.a2.HelloApplication@{com.example.a2.HelloApplication}}
+
+
+Primary Java\+FX {\ttfamily \doxylink{}{Application}} for the personal budgeting system.  
+
+
+Inheritance diagram for com.\+example.\+a2.\+Hello\+Application:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1example_1_1a2_1_1_hello_application}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1_hello_application_af37d5274f93f0ac3133ea348c75cd0a2}{start}} (Stage stage)  throws Exception 
+\begin{DoxyCompactList}\small\item\em Constructs the initial login scene. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1_hello_application_aa187693d171476fe30c02a676c92eea6}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Releases the singleton database connection on JVM shutdown of the Java\+FX application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1_hello_application_ad60f32cc90ad80ed9a6bda9569ac0fd4}{main}} (String\+[$\,$]\+ args)
+\begin{DoxyCompactList}\small\item\em Convenience launcher when this class is run directly (IDE or {\ttfamily java}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Primary Java\+FX {\ttfamily \doxylink{}{Application}} for the personal budgeting system. 
+
+Initializes SQLite via {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1util_1_1_database_manager}{Database\+Manager}} and loads the login FXML scene.
+
+\begin{DoxyAuthor}{Author}
+Abanoub 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classcom_1_1example_1_1a2_1_1ui_1_1_login_controller}{com.\+example.\+a2.\+ui.\+Login\+Controller} 
+
+\doxylink{classcom_1_1example_1_1a2_1_1util_1_1_database_manager}{Database\+Manager} 
+\end{DoxySeeAlso}
+
+
+\label{classcom_1_1example_1_1a2_1_1_hello_application_doc-func-members}
+\Hypertarget{classcom_1_1example_1_1a2_1_1_hello_application_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1_hello_application_ad60f32cc90ad80ed9a6bda9569ac0fd4}\index{com.example.a2.HelloApplication@{com.example.a2.HelloApplication}!main@{main}}
+\index{main@{main}!com.example.a2.HelloApplication@{com.example.a2.HelloApplication}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1_hello_application_ad60f32cc90ad80ed9a6bda9569ac0fd4} 
+void com.\+example.\+a2.\+Hello\+Application.\+main (\begin{DoxyParamCaption}\item[{String\+[$\,$]\+}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convenience launcher when this class is run directly (IDE or {\ttfamily java}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Java\+FX application arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1_hello_application_af37d5274f93f0ac3133ea348c75cd0a2}\index{com.example.a2.HelloApplication@{com.example.a2.HelloApplication}!start@{start}}
+\index{start@{start}!com.example.a2.HelloApplication@{com.example.a2.HelloApplication}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1_hello_application_af37d5274f93f0ac3133ea348c75cd0a2} 
+void com.\+example.\+a2.\+Hello\+Application.\+start (\begin{DoxyParamCaption}\item[{Stage}]{stage}{}\end{DoxyParamCaption}) throws Exception}
+
+
+
+Constructs the initial login scene. 
+
+Loads {\ttfamily login.\+fxml}, applies scene graph styling from FXML, and shows the primary stage.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stage} & primary window provided by the Java\+FX runtime \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & if FXML loading or database initialization fails \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1_hello_application_aa187693d171476fe30c02a676c92eea6}\index{com.example.a2.HelloApplication@{com.example.a2.HelloApplication}!stop@{stop}}
+\index{stop@{stop}!com.example.a2.HelloApplication@{com.example.a2.HelloApplication}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1_hello_application_aa187693d171476fe30c02a676c92eea6} 
+void com.\+example.\+a2.\+Hello\+Application.\+stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Releases the singleton database connection on JVM shutdown of the Java\+FX application. 
+
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+Hello\+Application.\+java\end{DoxyCompactItemize}

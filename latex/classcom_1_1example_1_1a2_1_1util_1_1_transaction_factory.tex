@@ -1,0 +1,122 @@
+\doxysection{com.\+example.\+a2.\+util.\+Transaction\+Factory Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1util_1_1_transaction_factory}{}\label{classcom_1_1example_1_1a2_1_1util_1_1_transaction_factory}\index{com.example.a2.util.TransactionFactory@{com.example.a2.util.TransactionFactory}}
+
+
+Factory for constructing {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} instances used by the UI layer (factory pattern).  
+
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1util_1_1_transaction_factory_a2d32a29eb9d0e3cd0439ce0a113f1176}{create\+Transaction}} (int user\+Id, double amount, \doxymbox{\hyperlink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type}{Transaction\+Type}} type, int category\+Id, Local\+Date date, String description)
+\begin{DoxyCompactList}\small\item\em Creates a transaction with all required fields (no database id). \end{DoxyCompactList}\item 
+static \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1util_1_1_transaction_factory_aa85019eb946940fb055d39e4a9d043c4}{create\+Income\+Transaction}} (int user\+Id, double amount, int category\+Id, Local\+Date date, String description)
+\begin{DoxyCompactList}\small\item\em Convenience wrapper for {\ttfamily \doxylink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type_a18787408176239275937cdcb8e779092}{Transaction\+Type\+\#\+INCOME}}. \end{DoxyCompactList}\item 
+static \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1util_1_1_transaction_factory_a9359151bb4a4048f21e4052e77b3dbef}{create\+Expense\+Transaction}} (int user\+Id, double amount, int category\+Id, Local\+Date date, String description)
+\begin{DoxyCompactList}\small\item\em Convenience wrapper for {\ttfamily \doxylink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type_a7a2219ec8d7b1a6a14e718c1eaa5612c}{Transaction\+Type\+\#\+EXPENSE}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory for constructing {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} instances used by the UI layer (factory pattern). 
+
+\begin{DoxyAuthor}{Author}
+Abanoub 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classcom_1_1example_1_1a2_1_1ui_1_1_add_transaction_controller}{com.\+example.\+a2.\+ui.\+Add\+Transaction\+Controller} 
+
+\doxylink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction} 
+\end{DoxySeeAlso}
+
+
+\label{classcom_1_1example_1_1a2_1_1util_1_1_transaction_factory_doc-func-members}
+\Hypertarget{classcom_1_1example_1_1a2_1_1util_1_1_transaction_factory_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1util_1_1_transaction_factory_a9359151bb4a4048f21e4052e77b3dbef}\index{com.example.a2.util.TransactionFactory@{com.example.a2.util.TransactionFactory}!createExpenseTransaction@{createExpenseTransaction}}
+\index{createExpenseTransaction@{createExpenseTransaction}!com.example.a2.util.TransactionFactory@{com.example.a2.util.TransactionFactory}}
+\doxysubsubsection{\texorpdfstring{createExpenseTransaction()}{createExpenseTransaction()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1util_1_1_transaction_factory_a9359151bb4a4048f21e4052e77b3dbef} 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} com.\+example.\+a2.\+util.\+Transaction\+Factory.\+create\+Expense\+Transaction (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{double}]{amount}{, }\item[{int}]{category\+Id}{, }\item[{Local\+Date}]{date}{, }\item[{String}]{description}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convenience wrapper for {\ttfamily \doxylink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type_a7a2219ec8d7b1a6a14e718c1eaa5612c}{Transaction\+Type\+\#\+EXPENSE}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user id \\
+\hline
+{\em amount} & positive amount \\
+\hline
+{\em category\+Id} & expense category id \\
+\hline
+{\em date} & transaction date \\
+\hline
+{\em description} & optional note \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+expense transaction 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1util_1_1_transaction_factory_aa85019eb946940fb055d39e4a9d043c4}\index{com.example.a2.util.TransactionFactory@{com.example.a2.util.TransactionFactory}!createIncomeTransaction@{createIncomeTransaction}}
+\index{createIncomeTransaction@{createIncomeTransaction}!com.example.a2.util.TransactionFactory@{com.example.a2.util.TransactionFactory}}
+\doxysubsubsection{\texorpdfstring{createIncomeTransaction()}{createIncomeTransaction()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1util_1_1_transaction_factory_aa85019eb946940fb055d39e4a9d043c4} 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} com.\+example.\+a2.\+util.\+Transaction\+Factory.\+create\+Income\+Transaction (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{double}]{amount}{, }\item[{int}]{category\+Id}{, }\item[{Local\+Date}]{date}{, }\item[{String}]{description}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convenience wrapper for {\ttfamily \doxylink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type_a18787408176239275937cdcb8e779092}{Transaction\+Type\+\#\+INCOME}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user id \\
+\hline
+{\em amount} & positive amount \\
+\hline
+{\em category\+Id} & income category id \\
+\hline
+{\em date} & transaction date \\
+\hline
+{\em description} & optional note \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+income transaction 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1util_1_1_transaction_factory_a2d32a29eb9d0e3cd0439ce0a113f1176}\index{com.example.a2.util.TransactionFactory@{com.example.a2.util.TransactionFactory}!createTransaction@{createTransaction}}
+\index{createTransaction@{createTransaction}!com.example.a2.util.TransactionFactory@{com.example.a2.util.TransactionFactory}}
+\doxysubsubsection{\texorpdfstring{createTransaction()}{createTransaction()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1util_1_1_transaction_factory_a2d32a29eb9d0e3cd0439ce0a113f1176} 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} com.\+example.\+a2.\+util.\+Transaction\+Factory.\+create\+Transaction (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{double}]{amount}{, }\item[{\doxymbox{\hyperlink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type}{Transaction\+Type}}}]{type}{, }\item[{int}]{category\+Id}{, }\item[{Local\+Date}]{date}{, }\item[{String}]{description}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a transaction with all required fields (no database id). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user id \\
+\hline
+{\em amount} & positive amount \\
+\hline
+{\em type} & income or expense \\
+\hline
+{\em category\+Id} & category foreign key \\
+\hline
+{\em date} & transaction date \\
+\hline
+{\em description} & optional note \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} ready for DAO insert 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+util/\+Transaction\+Factory.\+java\end{DoxyCompactItemize}

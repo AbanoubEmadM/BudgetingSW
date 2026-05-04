@@ -1,0 +1,31 @@
+\doxysection{com.\+example.\+a2.\+service.\+Transaction\+Service Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service}{}\label{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service}\index{com.example.a2.service.TransactionService@{com.example.a2.service.TransactionService}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a6b514e26c80047a887bcb7575313509a}\label{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a6b514e26c80047a887bcb7575313509a} 
+{\bfseries Transaction\+Service} (\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_budget_service}{Budget\+Service}} budget\+Service)
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a74fa40600b7fbd92fe9c80fde32c9670}\label{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a74fa40600b7fbd92fe9c80fde32c9670} 
+void {\bfseries add\+Transaction} (\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} transaction, \doxymbox{\hyperlink{interfacecom_1_1example_1_1a2_1_1util_1_1_notification_sender}{Notification\+Sender}} notification\+Sender)  throws SQLException 
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a2f7486c2dbe8d9579cdf8f04d4b13ba9}\label{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a2f7486c2dbe8d9579cdf8f04d4b13ba9} 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} $>$ {\bfseries get\+Transactions\+By\+User} (int user\+Id)  throws SQLException 
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a81442a58273d612d234d703996c8321c}\label{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a81442a58273d612d234d703996c8321c} 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} $>$ {\bfseries get\+Monthly\+Transactions} (int user\+Id, int month, int year)  throws SQLException 
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a867dd6fc631fa4348a35aec73c72dd39}\label{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a867dd6fc631fa4348a35aec73c72dd39} 
+void {\bfseries delete\+Transaction} (int transaction\+Id)  throws SQLException 
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a530e6f2fe2fb2c5a0268e792183d2a63}\label{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a530e6f2fe2fb2c5a0268e792183d2a63} 
+double {\bfseries calculate\+Monthly\+Income} (int user\+Id, int month, int year)  throws SQLException 
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_aaeff471475a9861250adef67da42f48b}\label{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_aaeff471475a9861250adef67da42f48b} 
+double {\bfseries calculate\+Monthly\+Expense} (int user\+Id, int month, int year)  throws SQLException 
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+service/\+Transaction\+Service.\+java\end{DoxyCompactItemize}

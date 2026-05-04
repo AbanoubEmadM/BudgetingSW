@@ -1,0 +1,222 @@
+\doxysection{com.\+example.\+a2.\+service.\+Transaction\+Service Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service}{}\label{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service}\index{com.example.a2.service.TransactionService@{com.example.a2.service.TransactionService}}
+
+
+Coordinates transaction persistence and post-\/save budget checks for expenses.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a6b514e26c80047a887bcb7575313509a}{Transaction\+Service}} (\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_budget_service}{Budget\+Service}} budget\+Service)
+\begin{DoxyCompactList}\small\item\em Constructs the service with injected {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1service_1_1_budget_service}{Budget\+Service}}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a74fa40600b7fbd92fe9c80fde32c9670}{add\+Transaction}} (\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} transaction, \doxymbox{\hyperlink{interfacecom_1_1example_1_1a2_1_1util_1_1_notification_sender}{Notification\+Sender}} notification\+Sender)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Persists a transaction and may trigger a budget alert for expense rows. \end{DoxyCompactList}\item 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} $>$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a2f7486c2dbe8d9579cdf8f04d4b13ba9}{get\+Transactions\+By\+User}} (int user\+Id)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Lists all transactions for a user. \end{DoxyCompactList}\item 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} $>$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a81442a58273d612d234d703996c8321c}{get\+Monthly\+Transactions}} (int user\+Id, int month, int year)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Lists transactions in a calendar month. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a867dd6fc631fa4348a35aec73c72dd39}{delete\+Transaction}} (int transaction\+Id)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Deletes a transaction by id. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a530e6f2fe2fb2c5a0268e792183d2a63}{calculate\+Monthly\+Income}} (int user\+Id, int month, int year)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Sums income amounts in the given month. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_aaeff471475a9861250adef67da42f48b}{calculate\+Monthly\+Expense}} (int user\+Id, int month, int year)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Sums expense amounts in the given month. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Coordinates transaction persistence and post-\/save budget checks for expenses. 
+
+\begin{DoxyAuthor}{Author}
+Abanoub 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o}{com.\+example.\+a2.\+dao.\+Transaction\+DAO} 
+
+\doxylink{classcom_1_1example_1_1a2_1_1service_1_1_budget_service}{Budget\+Service} 
+\end{DoxySeeAlso}
+
+
+\label{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_doc-constructors}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a6b514e26c80047a887bcb7575313509a}\index{com.example.a2.service.TransactionService@{com.example.a2.service.TransactionService}!TransactionService@{TransactionService}}
+\index{TransactionService@{TransactionService}!com.example.a2.service.TransactionService@{com.example.a2.service.TransactionService}}
+\doxysubsubsection{\texorpdfstring{TransactionService()}{TransactionService()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a6b514e26c80047a887bcb7575313509a} 
+com.\+example.\+a2.\+service.\+Transaction\+Service.\+Transaction\+Service (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_budget_service}{Budget\+Service}}}]{budget\+Service}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the service with injected {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1service_1_1_budget_service}{Budget\+Service}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em budget\+Service} & non-\/null budget service for alert checks \\
+\hline
+\end{DoxyParams}
+
+
+\label{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_doc-func-members}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a74fa40600b7fbd92fe9c80fde32c9670}\index{com.example.a2.service.TransactionService@{com.example.a2.service.TransactionService}!addTransaction@{addTransaction}}
+\index{addTransaction@{addTransaction}!com.example.a2.service.TransactionService@{com.example.a2.service.TransactionService}}
+\doxysubsubsection{\texorpdfstring{addTransaction()}{addTransaction()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a74fa40600b7fbd92fe9c80fde32c9670} 
+void com.\+example.\+a2.\+service.\+Transaction\+Service.\+add\+Transaction (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}}}]{transaction}{, }\item[{\doxymbox{\hyperlink{interfacecom_1_1example_1_1a2_1_1util_1_1_notification_sender}{Notification\+Sender}}}]{notification\+Sender}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Persists a transaction and may trigger a budget alert for expense rows. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transaction} & entity to insert \\
+\hline
+{\em notification\+Sender} & channel for budget warnings \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on insert or alert lookup failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_aaeff471475a9861250adef67da42f48b}\index{com.example.a2.service.TransactionService@{com.example.a2.service.TransactionService}!calculateMonthlyExpense@{calculateMonthlyExpense}}
+\index{calculateMonthlyExpense@{calculateMonthlyExpense}!com.example.a2.service.TransactionService@{com.example.a2.service.TransactionService}}
+\doxysubsubsection{\texorpdfstring{calculateMonthlyExpense()}{calculateMonthlyExpense()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_aaeff471475a9861250adef67da42f48b} 
+double com.\+example.\+a2.\+service.\+Transaction\+Service.\+calculate\+Monthly\+Expense (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{int}]{month}{, }\item[{int}]{year}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Sums expense amounts in the given month. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+{\em month} & calendar month \\
+\hline
+{\em year} & calendar year \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+total expenses 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a530e6f2fe2fb2c5a0268e792183d2a63}\index{com.example.a2.service.TransactionService@{com.example.a2.service.TransactionService}!calculateMonthlyIncome@{calculateMonthlyIncome}}
+\index{calculateMonthlyIncome@{calculateMonthlyIncome}!com.example.a2.service.TransactionService@{com.example.a2.service.TransactionService}}
+\doxysubsubsection{\texorpdfstring{calculateMonthlyIncome()}{calculateMonthlyIncome()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a530e6f2fe2fb2c5a0268e792183d2a63} 
+double com.\+example.\+a2.\+service.\+Transaction\+Service.\+calculate\+Monthly\+Income (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{int}]{month}{, }\item[{int}]{year}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Sums income amounts in the given month. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+{\em month} & calendar month \\
+\hline
+{\em year} & calendar year \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+total income 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a867dd6fc631fa4348a35aec73c72dd39}\index{com.example.a2.service.TransactionService@{com.example.a2.service.TransactionService}!deleteTransaction@{deleteTransaction}}
+\index{deleteTransaction@{deleteTransaction}!com.example.a2.service.TransactionService@{com.example.a2.service.TransactionService}}
+\doxysubsubsection{\texorpdfstring{deleteTransaction()}{deleteTransaction()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a867dd6fc631fa4348a35aec73c72dd39} 
+void com.\+example.\+a2.\+service.\+Transaction\+Service.\+delete\+Transaction (\begin{DoxyParamCaption}\item[{int}]{transaction\+Id}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Deletes a transaction by id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transaction\+Id} & primary key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on delete failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a81442a58273d612d234d703996c8321c}\index{com.example.a2.service.TransactionService@{com.example.a2.service.TransactionService}!getMonthlyTransactions@{getMonthlyTransactions}}
+\index{getMonthlyTransactions@{getMonthlyTransactions}!com.example.a2.service.TransactionService@{com.example.a2.service.TransactionService}}
+\doxysubsubsection{\texorpdfstring{getMonthlyTransactions()}{getMonthlyTransactions()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a81442a58273d612d234d703996c8321c} 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} $>$ com.\+example.\+a2.\+service.\+Transaction\+Service.\+get\+Monthly\+Transactions (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{int}]{month}{, }\item[{int}]{year}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Lists transactions in a calendar month. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+{\em month} & month 1–12 \\
+\hline
+{\em year} & four-\/digit year \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+transactions in range 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a2f7486c2dbe8d9579cdf8f04d4b13ba9}\index{com.example.a2.service.TransactionService@{com.example.a2.service.TransactionService}!getTransactionsByUser@{getTransactionsByUser}}
+\index{getTransactionsByUser@{getTransactionsByUser}!com.example.a2.service.TransactionService@{com.example.a2.service.TransactionService}}
+\doxysubsubsection{\texorpdfstring{getTransactionsByUser()}{getTransactionsByUser()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service_a2f7486c2dbe8d9579cdf8f04d4b13ba9} 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} $>$ com.\+example.\+a2.\+service.\+Transaction\+Service.\+get\+Transactions\+By\+User (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Lists all transactions for a user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ordered transactions 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+service/\+Transaction\+Service.\+java\end{DoxyCompactItemize}

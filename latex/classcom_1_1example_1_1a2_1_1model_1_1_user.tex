@@ -1,0 +1,207 @@
+\doxysection{com.\+example.\+a2.\+model.\+User Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_user}{}\label{classcom_1_1example_1_1a2_1_1model_1_1_user}\index{com.example.a2.model.User@{com.example.a2.model.User}}
+
+
+Domain model for an application user stored in the {\ttfamily users} table.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_user_a382256c223aa36ac174ceb354e81214e}\label{classcom_1_1example_1_1a2_1_1model_1_1_user_a382256c223aa36ac174ceb354e81214e} 
+{\bfseries User} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty user for ORM-\/style population. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_user_ae960c58cb0d9f66e5786068f0b424e40}{User}} (int id, String email, String password\+Hash, Local\+Date\+Time created\+At)
+\begin{DoxyCompactList}\small\item\em Constructs a user with all scalar fields set. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_user_a99c40b812509dc7d23cef85087bc29ae}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Returns the persistent user id. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_user_a50dd81f2f3944744a23022aeecfa3b47}{set\+Id}} (int id)
+\begin{DoxyCompactList}\small\item\em Sets the persistent user id. \end{DoxyCompactList}\item 
+String \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_user_ad02e7ba4f318e60acb129d3c48647976}{get\+Email}} ()
+\begin{DoxyCompactList}\small\item\em Returns the user\textquotesingle{}s email address. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_user_a5bb6c6c0bbe314357ec8f3d92b59edc1}{set\+Email}} (String email)
+\begin{DoxyCompactList}\small\item\em Sets the user\textquotesingle{}s email address. \end{DoxyCompactList}\item 
+String \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_user_a6a3f058350436a03191f5b0878f0d079}{get\+Password\+Hash}} ()
+\begin{DoxyCompactList}\small\item\em Returns the stored password hash. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_user_ad26274a10a58d14caba646ca8ee0b868}{set\+Password\+Hash}} (String password\+Hash)
+\begin{DoxyCompactList}\small\item\em Sets the stored password hash. \end{DoxyCompactList}\item 
+Local\+Date\+Time \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_user_a0f5223d08e333748a90ec2af641e21db}{get\+Created\+At}} ()
+\begin{DoxyCompactList}\small\item\em Returns the account creation time. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_user_a0ae4360dcfba6e0fe3cbb4da2bd9f36d}{set\+Created\+At}} (Local\+Date\+Time created\+At)
+\begin{DoxyCompactList}\small\item\em Sets the account creation time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Domain model for an application user stored in the {\ttfamily users} table. 
+
+\begin{DoxyAuthor}{Author}
+Abanoub 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o}{com.\+example.\+a2.\+dao.\+User\+DAO} 
+
+\doxylink{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager}{com.\+example.\+a2.\+service.\+Authentication\+Manager} 
+\end{DoxySeeAlso}
+
+
+\label{classcom_1_1example_1_1a2_1_1model_1_1_user_doc-constructors}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_user_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_user_ae960c58cb0d9f66e5786068f0b424e40}\index{com.example.a2.model.User@{com.example.a2.model.User}!User@{User}}
+\index{User@{User}!com.example.a2.model.User@{com.example.a2.model.User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_user_ae960c58cb0d9f66e5786068f0b424e40} 
+com.\+example.\+a2.\+model.\+User.\+User (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{String}]{email}{, }\item[{String}]{password\+Hash}{, }\item[{Local\+Date\+Time}]{created\+At}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a user with all scalar fields set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & user id \\
+\hline
+{\em email} & email address \\
+\hline
+{\em password\+Hash} & stored hash \\
+\hline
+{\em created\+At} & creation time \\
+\hline
+\end{DoxyParams}
+
+
+\label{classcom_1_1example_1_1a2_1_1model_1_1_user_doc-func-members}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_user_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_user_a0f5223d08e333748a90ec2af641e21db}\index{com.example.a2.model.User@{com.example.a2.model.User}!getCreatedAt@{getCreatedAt}}
+\index{getCreatedAt@{getCreatedAt}!com.example.a2.model.User@{com.example.a2.model.User}}
+\doxysubsubsection{\texorpdfstring{getCreatedAt()}{getCreatedAt()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_user_a0f5223d08e333748a90ec2af641e21db} 
+Local\+Date\+Time com.\+example.\+a2.\+model.\+User.\+get\+Created\+At (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the account creation time. 
+
+\begin{DoxyReturn}{Returns}
+creation timestamp, or {\ttfamily null} if not loaded 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_user_ad02e7ba4f318e60acb129d3c48647976}\index{com.example.a2.model.User@{com.example.a2.model.User}!getEmail@{getEmail}}
+\index{getEmail@{getEmail}!com.example.a2.model.User@{com.example.a2.model.User}}
+\doxysubsubsection{\texorpdfstring{getEmail()}{getEmail()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_user_ad02e7ba4f318e60acb129d3c48647976} 
+String com.\+example.\+a2.\+model.\+User.\+get\+Email (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the user\textquotesingle{}s email address. 
+
+\begin{DoxyReturn}{Returns}
+email string 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_user_a99c40b812509dc7d23cef85087bc29ae}\index{com.example.a2.model.User@{com.example.a2.model.User}!getId@{getId}}
+\index{getId@{getId}!com.example.a2.model.User@{com.example.a2.model.User}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_user_a99c40b812509dc7d23cef85087bc29ae} 
+int com.\+example.\+a2.\+model.\+User.\+get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the persistent user id. 
+
+\begin{DoxyReturn}{Returns}
+database primary key 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_user_a6a3f058350436a03191f5b0878f0d079}\index{com.example.a2.model.User@{com.example.a2.model.User}!getPasswordHash@{getPasswordHash}}
+\index{getPasswordHash@{getPasswordHash}!com.example.a2.model.User@{com.example.a2.model.User}}
+\doxysubsubsection{\texorpdfstring{getPasswordHash()}{getPasswordHash()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_user_a6a3f058350436a03191f5b0878f0d079} 
+String com.\+example.\+a2.\+model.\+User.\+get\+Password\+Hash (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the stored password hash. 
+
+\begin{DoxyReturn}{Returns}
+hash string from persistence 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_user_a0ae4360dcfba6e0fe3cbb4da2bd9f36d}\index{com.example.a2.model.User@{com.example.a2.model.User}!setCreatedAt@{setCreatedAt}}
+\index{setCreatedAt@{setCreatedAt}!com.example.a2.model.User@{com.example.a2.model.User}}
+\doxysubsubsection{\texorpdfstring{setCreatedAt()}{setCreatedAt()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_user_a0ae4360dcfba6e0fe3cbb4da2bd9f36d} 
+void com.\+example.\+a2.\+model.\+User.\+set\+Created\+At (\begin{DoxyParamCaption}\item[{Local\+Date\+Time}]{created\+At}{}\end{DoxyParamCaption})}
+
+
+
+Sets the account creation time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em created\+At} & creation timestamp \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_user_a5bb6c6c0bbe314357ec8f3d92b59edc1}\index{com.example.a2.model.User@{com.example.a2.model.User}!setEmail@{setEmail}}
+\index{setEmail@{setEmail}!com.example.a2.model.User@{com.example.a2.model.User}}
+\doxysubsubsection{\texorpdfstring{setEmail()}{setEmail()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_user_a5bb6c6c0bbe314357ec8f3d92b59edc1} 
+void com.\+example.\+a2.\+model.\+User.\+set\+Email (\begin{DoxyParamCaption}\item[{String}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Sets the user\textquotesingle{}s email address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & new email value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_user_a50dd81f2f3944744a23022aeecfa3b47}\index{com.example.a2.model.User@{com.example.a2.model.User}!setId@{setId}}
+\index{setId@{setId}!com.example.a2.model.User@{com.example.a2.model.User}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_user_a50dd81f2f3944744a23022aeecfa3b47} 
+void com.\+example.\+a2.\+model.\+User.\+set\+Id (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Sets the persistent user id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & database primary key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_user_ad26274a10a58d14caba646ca8ee0b868}\index{com.example.a2.model.User@{com.example.a2.model.User}!setPasswordHash@{setPasswordHash}}
+\index{setPasswordHash@{setPasswordHash}!com.example.a2.model.User@{com.example.a2.model.User}}
+\doxysubsubsection{\texorpdfstring{setPasswordHash()}{setPasswordHash()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_user_ad26274a10a58d14caba646ca8ee0b868} 
+void com.\+example.\+a2.\+model.\+User.\+set\+Password\+Hash (\begin{DoxyParamCaption}\item[{String}]{password\+Hash}{}\end{DoxyParamCaption})}
+
+
+
+Sets the stored password hash. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em password\+Hash} & hash produced by {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1util_1_1_password_util}{com.\+example.\+a2.\+util.\+Password\+Util}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+model/\+User.\+java\end{DoxyCompactItemize}
