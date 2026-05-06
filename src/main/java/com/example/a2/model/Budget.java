@@ -11,7 +11,7 @@ public class Budget {
     private double spent;
 
     public Budget() {}
-
+//mg
     public Budget(int userId, int categoryId, double amount, int month, int year) {
         this.userId = userId;
         this.categoryId = categoryId;
