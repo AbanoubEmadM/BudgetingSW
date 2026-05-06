@@ -1,0 +1,90 @@
+\doxysection{com.\+example.\+a2.\+util.\+Alert\+Strategy Interface Reference}
+\hypertarget{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy}{}\label{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy}\index{com.example.a2.util.AlertStrategy@{com.example.a2.util.AlertStrategy}}
+
+
+Strategy interface for deciding when a monthly {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{Budget}} should trigger an alert.  
+
+
+Inheritance diagram for com.\+example.\+a2.\+util.\+Alert\+Strategy:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \doxymbox{\hyperlink{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy_abee6514a7eb53b3074fbe5f88a7c84f3}{should\+Alert}} (\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{Budget}} budget)
+\begin{DoxyCompactList}\small\item\em Determines whether an alert should be raised for the given budget snapshot. \end{DoxyCompactList}\item 
+String \doxymbox{\hyperlink{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy_a766de530a42ad860ae4011a98b7c7d0f}{get\+Message}} (\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{Budget}} budget)
+\begin{DoxyCompactList}\small\item\em Builds the human-\/readable alert body for the given budget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Strategy interface for deciding when a monthly {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{Budget}} should trigger an alert. 
+
+\begin{DoxyAuthor}{Author}
+Abanoub 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy}{Threshold\+Alert\+Strategy} 
+
+\doxylink{classcom_1_1example_1_1a2_1_1service_1_1_budget_service}{com.\+example.\+a2.\+service.\+Budget\+Service} 
+\end{DoxySeeAlso}
+
+
+\label{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy_doc-func-members}
+\Hypertarget{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy_a766de530a42ad860ae4011a98b7c7d0f}\index{com.example.a2.util.AlertStrategy@{com.example.a2.util.AlertStrategy}!getMessage@{getMessage}}
+\index{getMessage@{getMessage}!com.example.a2.util.AlertStrategy@{com.example.a2.util.AlertStrategy}}
+\doxysubsubsection{\texorpdfstring{getMessage()}{getMessage()}}
+{\footnotesize\ttfamily \label{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy_a766de530a42ad860ae4011a98b7c7d0f} 
+String com.\+example.\+a2.\+util.\+Alert\+Strategy.\+get\+Message (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{Budget}}}]{budget}{}\end{DoxyParamCaption})}
+
+
+
+Builds the human-\/readable alert body for the given budget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em budget} & budget row used to format percentages and amounts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+message text suitable for {\ttfamily \doxylink{interfacecom_1_1example_1_1a2_1_1util_1_1_notification_sender}{Notification\+Sender}} 
+\end{DoxyReturn}
+
+
+Implemented in \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy_a62232efbf9bd2d37d82b276f40ce4e47}{com.\+example.\+a2.\+util.\+Threshold\+Alert\+Strategy}}.
+
+\Hypertarget{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy_abee6514a7eb53b3074fbe5f88a7c84f3}\index{com.example.a2.util.AlertStrategy@{com.example.a2.util.AlertStrategy}!shouldAlert@{shouldAlert}}
+\index{shouldAlert@{shouldAlert}!com.example.a2.util.AlertStrategy@{com.example.a2.util.AlertStrategy}}
+\doxysubsubsection{\texorpdfstring{shouldAlert()}{shouldAlert()}}
+{\footnotesize\ttfamily \label{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy_abee6514a7eb53b3074fbe5f88a7c84f3} 
+boolean com.\+example.\+a2.\+util.\+Alert\+Strategy.\+should\+Alert (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{Budget}}}]{budget}{}\end{DoxyParamCaption})}
+
+
+
+Determines whether an alert should be raised for the given budget snapshot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em budget} & budget row including spent and limit amounts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the user should be notified 
+\end{DoxyReturn}
+
+
+Implemented in \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy_a919ead5853097ed3875e714eebd6590e}{com.\+example.\+a2.\+util.\+Threshold\+Alert\+Strategy}}.
+
+
+
+The documentation for this interface was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+util/\+Alert\+Strategy.\+java\end{DoxyCompactItemize}

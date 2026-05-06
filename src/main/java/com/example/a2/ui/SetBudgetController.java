@@ -17,42 +17,59 @@ import java.time.format.TextStyle;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * Controller for {@code set-budget.fxml}: sets a monthly expense budget per category.
+ *
+ * @author Abanoub
+ * @version 1.0
+ * @see DashboardController
+ * @see BudgetService
+ */
 public class SetBudgetController {
 
+    /** Expense category picker. */
     @FXML private ComboBox<Category> categoryComboBox;
+    /** Budget cap amount. */
     @FXML private TextField amountField;
+    /** Month name list. */
     @FXML private ComboBox<String> monthComboBox;
+    /** Year list. */
     @FXML private ComboBox<Integer> yearComboBox;
+    /** Validation / error label. */
     @FXML private Label errorLabel;
 
+    /** Category source. */
     private final CategoryService categoryService = new CategoryService();
+    /** Budget persistence. */
     private final BudgetService budgetService = new BudgetService();
+    /** Current user. */
     private final AuthenticationManager authManager = AuthenticationManager.getInstance();
 
+    /**
+     * [FXML] Loads expense categories and populates month/year combo boxes.
+     *
+     * @return nothing
+     */
     @FXML
     private void initialize() {
         try {
-            // Load expense categories only (budgets are for expenses)
             List<Category> categories = categoryService.getCategoriesByType(TransactionType.EXPENSE);
             categoryComboBox.setItems(FXCollections.observableArrayList(categories));
             if (!categories.isEmpty()) {
                 categoryComboBox.getSelectionModel().selectFirst();
             }
 
-            // Populate months
             for (int i = 1; i <= 12; i++) {
                 monthComboBox.getItems().add(
                     java.time.Month.of(i).getDisplayName(TextStyle.FULL, Locale.ENGLISH)
                 );
             }
 
-            // Populate years
             LocalDate now = LocalDate.now();
             for (int i = now.getYear() - 1; i <= now.getYear() + 2; i++) {
                 yearComboBox.getItems().add(i);
             }
 
-            // Set current month and year
             monthComboBox.getSelectionModel().select(now.getMonthValue() - 1);
             yearComboBox.getSelectionModel().select(Integer.valueOf(now.getYear()));
 
@@ -61,9 +78,13 @@ public class SetBudgetController {
         }
     }
 
+    /**
+     * [FXML] Validates and saves the budget via {@link BudgetService#setBudget(int, int, double, int, int)}.
+     *
+     * @return nothing
+     */
     @FXML
     private void handleSave() {
-        // Validate inputs
         if (categoryComboBox.getValue() == null) {
             showError("Please select a category");
             return;
@@ -107,12 +128,23 @@ public class SetBudgetController {
         }
     }
 
+    /**
+     * [FXML] Closes the dialog.
+     *
+     * @return nothing
+     */
     @FXML
     private void handleCancel() {
         Stage stage = (Stage) amountField.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Shows an error message on {@link #errorLabel}.
+     *
+     * @param message text to show
+     * @return nothing
+     */
     private void showError(String message) {
         errorLabel.setText(message);
         errorLabel.setVisible(true);

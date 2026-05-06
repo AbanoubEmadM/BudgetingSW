@@ -1,0 +1,224 @@
+\doxysection{com.\+example.\+a2.\+dao.\+Goal\+DAO Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o}{}\label{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o}\index{com.example.a2.dao.GoalDAO@{com.example.a2.dao.GoalDAO}}
+
+
+Data access for {\ttfamily financial\+\_\+goals} and {\ttfamily goal\+\_\+contributions}.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_ad742f54b09ebe6e0b3aacc9f13aa09ff}\label{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_ad742f54b09ebe6e0b3aacc9f13aa09ff} 
+{\bfseries Goal\+DAO} ()
+\begin{DoxyCompactList}\small\item\em Constructs the DAO with the singleton connection. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}} \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_a716ca2f2dcbb27f82c7cd2804404aea4}{insert\+Goal}} (\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}} goal)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Inserts a goal and assigns the generated id to the entity. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_af3ed1eb032668e4658da5e50fcb829a7}{update\+Goal}} (\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}} goal)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Updates mutable goal fields for an existing row owned by the user. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_a3c890c1b186c9cb848edda601dd6f950}{delete\+Goal}} (int goal\+Id, int user\+Id)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Deletes a goal owned by the given user (contributions cascade). \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}} \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_a83219fff7f3e951bc297e5bbc58fa734}{find\+By\+Id}} (int goal\+Id, int user\+Id)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Loads a goal by id if owned by the user. \end{DoxyCompactList}\item 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}} $>$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_a15c8dfe72b0b2f1de06b532c6bdc007f}{find\+By\+User\+Id}} (int user\+Id)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Lists all goals for a user ordered by deadline. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_a933074782ca70b6d3cd3f143597f3d82}{add\+Contribution}} (int goal\+Id, int user\+Id, double amount, Integer transaction\+Id)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Records a contribution and increments {\ttfamily saved\+\_\+amount} in one transaction. \end{DoxyCompactList}\item 
+boolean \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_a7a9429a2505a3f9ae9e0466e2ad1d2fa}{is\+Transaction\+Linked\+To\+Any\+Goal}} (int transaction\+Id)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Returns whether an income transaction is already linked to any goal contribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Data access for {\ttfamily financial\+\_\+goals} and {\ttfamily goal\+\_\+contributions}. 
+
+\begin{DoxyAuthor}{Author}
+Abanoub 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{com.\+example.\+a2.\+model.\+Goal} 
+
+\doxylink{classcom_1_1example_1_1a2_1_1util_1_1_database_manager}{com.\+example.\+a2.\+util.\+Database\+Manager} 
+\end{DoxySeeAlso}
+
+
+\label{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_doc-func-members}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_a933074782ca70b6d3cd3f143597f3d82}\index{com.example.a2.dao.GoalDAO@{com.example.a2.dao.GoalDAO}!addContribution@{addContribution}}
+\index{addContribution@{addContribution}!com.example.a2.dao.GoalDAO@{com.example.a2.dao.GoalDAO}}
+\doxysubsubsection{\texorpdfstring{addContribution()}{addContribution()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_a933074782ca70b6d3cd3f143597f3d82} 
+void com.\+example.\+a2.\+dao.\+Goal\+DAO.\+add\+Contribution (\begin{DoxyParamCaption}\item[{int}]{goal\+Id}{, }\item[{int}]{user\+Id}{, }\item[{double}]{amount}{, }\item[{Integer}]{transaction\+Id}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Records a contribution and increments {\ttfamily saved\+\_\+amount} in one transaction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em goal\+Id} & goal id \\
+\hline
+{\em user\+Id} & owning user (authorization) \\
+\hline
+{\em amount} & positive contribution \\
+\hline
+{\em transaction\+Id} & optional linked income transaction id, or {\ttfamily null} for manual \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & if the update affects zero rows or insert fails \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_a3c890c1b186c9cb848edda601dd6f950}\index{com.example.a2.dao.GoalDAO@{com.example.a2.dao.GoalDAO}!deleteGoal@{deleteGoal}}
+\index{deleteGoal@{deleteGoal}!com.example.a2.dao.GoalDAO@{com.example.a2.dao.GoalDAO}}
+\doxysubsubsection{\texorpdfstring{deleteGoal()}{deleteGoal()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_a3c890c1b186c9cb848edda601dd6f950} 
+void com.\+example.\+a2.\+dao.\+Goal\+DAO.\+delete\+Goal (\begin{DoxyParamCaption}\item[{int}]{goal\+Id}{, }\item[{int}]{user\+Id}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Deletes a goal owned by the given user (contributions cascade). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em goal\+Id} & goal primary key \\
+\hline
+{\em user\+Id} & owning user (authorization) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on delete failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_a83219fff7f3e951bc297e5bbc58fa734}\index{com.example.a2.dao.GoalDAO@{com.example.a2.dao.GoalDAO}!findById@{findById}}
+\index{findById@{findById}!com.example.a2.dao.GoalDAO@{com.example.a2.dao.GoalDAO}}
+\doxysubsubsection{\texorpdfstring{findById()}{findById()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_a83219fff7f3e951bc297e5bbc58fa734} 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}} com.\+example.\+a2.\+dao.\+Goal\+DAO.\+find\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{goal\+Id}{, }\item[{int}]{user\+Id}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Loads a goal by id if owned by the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em goal\+Id} & goal id \\
+\hline
+{\em user\+Id} & owning user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+goal or {\ttfamily null} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_a15c8dfe72b0b2f1de06b532c6bdc007f}\index{com.example.a2.dao.GoalDAO@{com.example.a2.dao.GoalDAO}!findByUserId@{findByUserId}}
+\index{findByUserId@{findByUserId}!com.example.a2.dao.GoalDAO@{com.example.a2.dao.GoalDAO}}
+\doxysubsubsection{\texorpdfstring{findByUserId()}{findByUserId()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_a15c8dfe72b0b2f1de06b532c6bdc007f} 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}} $>$ com.\+example.\+a2.\+dao.\+Goal\+DAO.\+find\+By\+User\+Id (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Lists all goals for a user ordered by deadline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+goals for UI binding 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_a716ca2f2dcbb27f82c7cd2804404aea4}\index{com.example.a2.dao.GoalDAO@{com.example.a2.dao.GoalDAO}!insertGoal@{insertGoal}}
+\index{insertGoal@{insertGoal}!com.example.a2.dao.GoalDAO@{com.example.a2.dao.GoalDAO}}
+\doxysubsubsection{\texorpdfstring{insertGoal()}{insertGoal()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_a716ca2f2dcbb27f82c7cd2804404aea4} 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}} com.\+example.\+a2.\+dao.\+Goal\+DAO.\+insert\+Goal (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}}}]{goal}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Inserts a goal and assigns the generated id to the entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em goal} & populated goal (id updated after insert) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the same {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}} instance with id set 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on insert failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_a7a9429a2505a3f9ae9e0466e2ad1d2fa}\index{com.example.a2.dao.GoalDAO@{com.example.a2.dao.GoalDAO}!isTransactionLinkedToAnyGoal@{isTransactionLinkedToAnyGoal}}
+\index{isTransactionLinkedToAnyGoal@{isTransactionLinkedToAnyGoal}!com.example.a2.dao.GoalDAO@{com.example.a2.dao.GoalDAO}}
+\doxysubsubsection{\texorpdfstring{isTransactionLinkedToAnyGoal()}{isTransactionLinkedToAnyGoal()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_a7a9429a2505a3f9ae9e0466e2ad1d2fa} 
+boolean com.\+example.\+a2.\+dao.\+Goal\+DAO.\+is\+Transaction\+Linked\+To\+Any\+Goal (\begin{DoxyParamCaption}\item[{int}]{transaction\+Id}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Returns whether an income transaction is already linked to any goal contribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transaction\+Id} & transaction primary key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if a {\ttfamily goal\+\_\+contributions} row references it 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_af3ed1eb032668e4658da5e50fcb829a7}\index{com.example.a2.dao.GoalDAO@{com.example.a2.dao.GoalDAO}!updateGoal@{updateGoal}}
+\index{updateGoal@{updateGoal}!com.example.a2.dao.GoalDAO@{com.example.a2.dao.GoalDAO}}
+\doxysubsubsection{\texorpdfstring{updateGoal()}{updateGoal()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o_af3ed1eb032668e4658da5e50fcb829a7} 
+void com.\+example.\+a2.\+dao.\+Goal\+DAO.\+update\+Goal (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}}}]{goal}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Updates mutable goal fields for an existing row owned by the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em goal} & entity with id and user\+Id set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on update failure \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+dao/\+Goal\+DAO.\+java\end{DoxyCompactItemize}

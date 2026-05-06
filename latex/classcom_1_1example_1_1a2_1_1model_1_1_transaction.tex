@@ -1,0 +1,359 @@
+\doxysection{com.\+example.\+a2.\+model.\+Transaction Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{}\label{classcom_1_1example_1_1a2_1_1model_1_1_transaction}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+
+
+Represents a single monetary movement (income or expense) for a user.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_aed6735831b01289db0699cda3c5c7629}\label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_aed6735831b01289db0699cda3c5c7629} 
+{\bfseries Transaction} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty transaction for DAO population. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a67dc1dc9bef0751a14e44129a9adc541}{Transaction}} (int user\+Id, double amount, \doxymbox{\hyperlink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type}{Transaction\+Type}} type, int category\+Id, Local\+Date transaction\+Date, String description)
+\begin{DoxyCompactList}\small\item\em Constructs a transaction without database-\/generated fields. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a4af356cb94206417f24923c3d3d5fa24}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Returns the transaction id. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_ab9c8424debf85c27663ee44e970f4985}{set\+Id}} (int id)
+\begin{DoxyCompactList}\small\item\em Sets the transaction id. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a96cd8bb1467ff24d04a74500fa9c25b1}{get\+User\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Returns the owning user id. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a0a862145fc29bbe0fea4fcbc91db1d12}{set\+User\+Id}} (int user\+Id)
+\begin{DoxyCompactList}\small\item\em Sets the owning user id. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a76d46b716932f36dacefb95ad0a92e2e}{get\+Amount}} ()
+\begin{DoxyCompactList}\small\item\em Returns the transaction amount. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_acb090a532ed3749d7cd9d23c14cc31d2}{set\+Amount}} (double amount)
+\begin{DoxyCompactList}\small\item\em Sets the transaction amount. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type}{Transaction\+Type}} \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a6e0923719472e44d6e588dde72d2bddd}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Returns income vs expense type. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a67b11549ab137d12bb43938e42e910b8}{set\+Type}} (\doxymbox{\hyperlink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type}{Transaction\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Sets income vs expense type. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a4afa14cffec0d89a85152ba9828e4d06}{get\+Category\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Returns the category id. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_ad9981546bc809bc63421e99828b4aae6}{set\+Category\+Id}} (int category\+Id)
+\begin{DoxyCompactList}\small\item\em Sets the category id. \end{DoxyCompactList}\item 
+String \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_ae4f9c9fa32e5635c93089bdf9bb0f82f}{get\+Category\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returns the joined category display name. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a48876209756ad93c3238dac6dd450ab5}{set\+Category\+Name}} (String category\+Name)
+\begin{DoxyCompactList}\small\item\em Sets the joined category display name. \end{DoxyCompactList}\item 
+Local\+Date \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a207c8c44622545a746bcb0b200af471a}{get\+Transaction\+Date}} ()
+\begin{DoxyCompactList}\small\item\em Returns the transaction date. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a90bb4f917cc29a36d878cd6ae42d91fc}{set\+Transaction\+Date}} (Local\+Date transaction\+Date)
+\begin{DoxyCompactList}\small\item\em Sets the transaction date. \end{DoxyCompactList}\item 
+String \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a564adad6516cfe3021267c5ee27536be}{get\+Description}} ()
+\begin{DoxyCompactList}\small\item\em Returns the optional description. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a5fe7dede7e1372072570bf2651c72418}{set\+Description}} (String description)
+\begin{DoxyCompactList}\small\item\em Sets the optional description. \end{DoxyCompactList}\item 
+Local\+Date\+Time \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a85dd5db4d659721dabb610eb674a4384}{get\+Created\+At}} ()
+\begin{DoxyCompactList}\small\item\em Returns the row creation timestamp. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a0115e724c3df8735e456d30d087209e8}{set\+Created\+At}} (Local\+Date\+Time created\+At)
+\begin{DoxyCompactList}\small\item\em Sets the row creation timestamp. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single monetary movement (income or expense) for a user. 
+
+\begin{DoxyAuthor}{Author}
+Abanoub 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o}{com.\+example.\+a2.\+dao.\+Transaction\+DAO} 
+
+\doxylink{classcom_1_1example_1_1a2_1_1service_1_1_transaction_service}{com.\+example.\+a2.\+service.\+Transaction\+Service} 
+\end{DoxySeeAlso}
+
+
+\label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_doc-constructors}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a67dc1dc9bef0751a14e44129a9adc541}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!Transaction@{Transaction}}
+\index{Transaction@{Transaction}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{Transaction()}{Transaction()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a67dc1dc9bef0751a14e44129a9adc541} 
+com.\+example.\+a2.\+model.\+Transaction.\+Transaction (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{double}]{amount}{, }\item[{\doxymbox{\hyperlink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type}{Transaction\+Type}}}]{type}{, }\item[{int}]{category\+Id}{, }\item[{Local\+Date}]{transaction\+Date}{, }\item[{String}]{description}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a transaction without database-\/generated fields. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+{\em amount} & positive amount \\
+\hline
+{\em type} & income or expense \\
+\hline
+{\em category\+Id} & category foreign key \\
+\hline
+{\em transaction\+Date} & effective date \\
+\hline
+{\em description} & optional note \\
+\hline
+\end{DoxyParams}
+
+
+\label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_doc-func-members}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a76d46b716932f36dacefb95ad0a92e2e}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!getAmount@{getAmount}}
+\index{getAmount@{getAmount}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{getAmount()}{getAmount()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a76d46b716932f36dacefb95ad0a92e2e} 
+double com.\+example.\+a2.\+model.\+Transaction.\+get\+Amount (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the transaction amount. 
+
+\begin{DoxyReturn}{Returns}
+positive monetary value 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a4afa14cffec0d89a85152ba9828e4d06}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!getCategoryId@{getCategoryId}}
+\index{getCategoryId@{getCategoryId}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{getCategoryId()}{getCategoryId()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a4afa14cffec0d89a85152ba9828e4d06} 
+int com.\+example.\+a2.\+model.\+Transaction.\+get\+Category\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the category id. 
+
+\begin{DoxyReturn}{Returns}
+category foreign key 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_ae4f9c9fa32e5635c93089bdf9bb0f82f}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!getCategoryName@{getCategoryName}}
+\index{getCategoryName@{getCategoryName}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{getCategoryName()}{getCategoryName()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_ae4f9c9fa32e5635c93089bdf9bb0f82f} 
+String com.\+example.\+a2.\+model.\+Transaction.\+get\+Category\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the joined category display name. 
+
+\begin{DoxyReturn}{Returns}
+category label for UI tables 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a85dd5db4d659721dabb610eb674a4384}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!getCreatedAt@{getCreatedAt}}
+\index{getCreatedAt@{getCreatedAt}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{getCreatedAt()}{getCreatedAt()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a85dd5db4d659721dabb610eb674a4384} 
+Local\+Date\+Time com.\+example.\+a2.\+model.\+Transaction.\+get\+Created\+At (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the row creation timestamp. 
+
+\begin{DoxyReturn}{Returns}
+database {\ttfamily created\+\_\+at}, may be {\ttfamily null} 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a564adad6516cfe3021267c5ee27536be}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a564adad6516cfe3021267c5ee27536be} 
+String com.\+example.\+a2.\+model.\+Transaction.\+get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the optional description. 
+
+\begin{DoxyReturn}{Returns}
+user note, may be {\ttfamily null} 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a4af356cb94206417f24923c3d3d5fa24}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!getId@{getId}}
+\index{getId@{getId}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a4af356cb94206417f24923c3d3d5fa24} 
+int com.\+example.\+a2.\+model.\+Transaction.\+get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the transaction id. 
+
+\begin{DoxyReturn}{Returns}
+primary key 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a207c8c44622545a746bcb0b200af471a}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!getTransactionDate@{getTransactionDate}}
+\index{getTransactionDate@{getTransactionDate}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{getTransactionDate()}{getTransactionDate()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a207c8c44622545a746bcb0b200af471a} 
+Local\+Date com.\+example.\+a2.\+model.\+Transaction.\+get\+Transaction\+Date (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the transaction date. 
+
+\begin{DoxyReturn}{Returns}
+calendar date of the movement 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a6e0923719472e44d6e588dde72d2bddd}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!getType@{getType}}
+\index{getType@{getType}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a6e0923719472e44d6e588dde72d2bddd} 
+\doxymbox{\hyperlink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type}{Transaction\+Type}} com.\+example.\+a2.\+model.\+Transaction.\+get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns income vs expense type. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily \doxylink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type}{Transaction\+Type}} 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a96cd8bb1467ff24d04a74500fa9c25b1}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!getUserId@{getUserId}}
+\index{getUserId@{getUserId}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{getUserId()}{getUserId()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a96cd8bb1467ff24d04a74500fa9c25b1} 
+int com.\+example.\+a2.\+model.\+Transaction.\+get\+User\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the owning user id. 
+
+\begin{DoxyReturn}{Returns}
+user foreign key 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_acb090a532ed3749d7cd9d23c14cc31d2}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!setAmount@{setAmount}}
+\index{setAmount@{setAmount}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{setAmount()}{setAmount()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_acb090a532ed3749d7cd9d23c14cc31d2} 
+void com.\+example.\+a2.\+model.\+Transaction.\+set\+Amount (\begin{DoxyParamCaption}\item[{double}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Sets the transaction amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & positive monetary value \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_ad9981546bc809bc63421e99828b4aae6}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!setCategoryId@{setCategoryId}}
+\index{setCategoryId@{setCategoryId}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{setCategoryId()}{setCategoryId()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_ad9981546bc809bc63421e99828b4aae6} 
+void com.\+example.\+a2.\+model.\+Transaction.\+set\+Category\+Id (\begin{DoxyParamCaption}\item[{int}]{category\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Sets the category id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em category\+Id} & category foreign key \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a48876209756ad93c3238dac6dd450ab5}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!setCategoryName@{setCategoryName}}
+\index{setCategoryName@{setCategoryName}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{setCategoryName()}{setCategoryName()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a48876209756ad93c3238dac6dd450ab5} 
+void com.\+example.\+a2.\+model.\+Transaction.\+set\+Category\+Name (\begin{DoxyParamCaption}\item[{String}]{category\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Sets the joined category display name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em category\+Name} & label from SQL join \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a0115e724c3df8735e456d30d087209e8}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!setCreatedAt@{setCreatedAt}}
+\index{setCreatedAt@{setCreatedAt}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{setCreatedAt()}{setCreatedAt()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a0115e724c3df8735e456d30d087209e8} 
+void com.\+example.\+a2.\+model.\+Transaction.\+set\+Created\+At (\begin{DoxyParamCaption}\item[{Local\+Date\+Time}]{created\+At}{}\end{DoxyParamCaption})}
+
+
+
+Sets the row creation timestamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em created\+At} & persistence timestamp \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a5fe7dede7e1372072570bf2651c72418}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!setDescription@{setDescription}}
+\index{setDescription@{setDescription}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{setDescription()}{setDescription()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a5fe7dede7e1372072570bf2651c72418} 
+void com.\+example.\+a2.\+model.\+Transaction.\+set\+Description (\begin{DoxyParamCaption}\item[{String}]{description}{}\end{DoxyParamCaption})}
+
+
+
+Sets the optional description. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em description} & user note \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_ab9c8424debf85c27663ee44e970f4985}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!setId@{setId}}
+\index{setId@{setId}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_ab9c8424debf85c27663ee44e970f4985} 
+void com.\+example.\+a2.\+model.\+Transaction.\+set\+Id (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Sets the transaction id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & primary key \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a90bb4f917cc29a36d878cd6ae42d91fc}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!setTransactionDate@{setTransactionDate}}
+\index{setTransactionDate@{setTransactionDate}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{setTransactionDate()}{setTransactionDate()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a90bb4f917cc29a36d878cd6ae42d91fc} 
+void com.\+example.\+a2.\+model.\+Transaction.\+set\+Transaction\+Date (\begin{DoxyParamCaption}\item[{Local\+Date}]{transaction\+Date}{}\end{DoxyParamCaption})}
+
+
+
+Sets the transaction date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transaction\+Date} & calendar date \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a67b11549ab137d12bb43938e42e910b8}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!setType@{setType}}
+\index{setType@{setType}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{setType()}{setType()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a67b11549ab137d12bb43938e42e910b8} 
+void com.\+example.\+a2.\+model.\+Transaction.\+set\+Type (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type}{Transaction\+Type}}}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Sets income vs expense type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & transaction classification \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a0a862145fc29bbe0fea4fcbc91db1d12}\index{com.example.a2.model.Transaction@{com.example.a2.model.Transaction}!setUserId@{setUserId}}
+\index{setUserId@{setUserId}!com.example.a2.model.Transaction@{com.example.a2.model.Transaction}}
+\doxysubsubsection{\texorpdfstring{setUserId()}{setUserId()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1model_1_1_transaction_a0a862145fc29bbe0fea4fcbc91db1d12} 
+void com.\+example.\+a2.\+model.\+Transaction.\+set\+User\+Id (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Sets the owning user id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & user foreign key \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+model/\+Transaction.\+java\end{DoxyCompactItemize}

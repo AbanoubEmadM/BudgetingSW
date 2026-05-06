@@ -1,0 +1,28 @@
+var classcom_1_1example_1_1a2_1_1model_1_1_goal =
+[
+    [ "Goal", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#ab2b27bc3d13a2ef315bbec5242ebc78c", null ],
+    [ "Goal", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#a9ddf9c537e743944e9c8e524b04595f8", null ],
+    [ "createdAtProperty", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#a0aa01631b44c7136fc9515c90cea5916", null ],
+    [ "deadlineProperty", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#a76431a53ee48653b702988c22a2c724c", null ],
+    [ "getCreatedAt", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#a27468f3325e736c43dd483d4e389281f", null ],
+    [ "getDeadline", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#ac078fb38ebe2e75afcb260db1b76bdc5", null ],
+    [ "getId", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#aa96a9aed46e214467a5d2c4b172f3271", null ],
+    [ "getName", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#afddfb3fe7e0a94b008df9d82d3bc1a7c", null ],
+    [ "getProgressPercent", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#a17907902d1257a2e46b59f1de0fa3674", null ],
+    [ "getProgressRatio", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#a7f006c75351b4dacc56e0345f6e17f5d", null ],
+    [ "getSavedAmount", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#a362d9e696b2a49bd95afa6abb84eda05", null ],
+    [ "getTargetAmount", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#a85fccb5550e2696da93890b31c3125d0", null ],
+    [ "getUserId", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#ae1248c547d0b2210bafb847d25074755", null ],
+    [ "idProperty", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#a4e80a82e35f5d4c675b5e422d502f6fa", null ],
+    [ "nameProperty", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#a1de1bf2b0f96545eab0b5060592b62aa", null ],
+    [ "savedAmountProperty", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#a7d42cf1b976b11a1b32c62c038e78c06", null ],
+    [ "setCreatedAt", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#a5720950aa7f2a2fd02b4d41654b1acd0", null ],
+    [ "setDeadline", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#a3a7d53b3818ab744c36becb0d5d55e2a", null ],
+    [ "setId", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#acb72248ee612c571ed2f3ddd0f7acaf3", null ],
+    [ "setName", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#a40420aa53b19afd419e82d7f36246262", null ],
+    [ "setSavedAmount", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#a6ac9db1902092c014dadf6410137e1a8", null ],
+    [ "setTargetAmount", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#abb92845359a8f8c7dfa852d977d4bd07", null ],
+    [ "setUserId", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#ab08bd6475c37b3b8191424769dbd5da9", null ],
+    [ "targetAmountProperty", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#a1c21a43e6d89ee5e7840c80cf3db55bf", null ],
+    [ "userIdProperty", "classcom_1_1example_1_1a2_1_1model_1_1_goal.html#a431f43e482ab02ad68524f8a9e68d68b", null ]
+];

@@ -1,0 +1,199 @@
+\doxysection{com.\+example.\+a2.\+dao.\+Transaction\+DAO Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o}{}\label{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o}\index{com.example.a2.dao.TransactionDAO@{com.example.a2.dao.TransactionDAO}}
+
+
+Data access for {\ttfamily transactions}:\+ CRUD, monthly filters, and expense rollups for budgets.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_af3dfd76cc708d686d995ea54657cc4f4}\label{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_af3dfd76cc708d686d995ea54657cc4f4} 
+{\bfseries Transaction\+DAO} ()
+\begin{DoxyCompactList}\small\item\em Constructs the DAO with the singleton connection. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_ae361c652df844b01478144887d1e8d31}{create\+Transaction}} (\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} transaction)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Inserts a new transaction row. \end{DoxyCompactList}\item 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} $>$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_aa0845b5093b223f24a768620acfaed4a}{get\+Transactions\+By\+User}} (int user\+Id)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Lists all transactions for a user with category names (newest first). \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_a4d10eb8a159da4a6581c7d4fa7edc9ce}{delete\+Transaction}} (int transaction\+Id)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Deletes a transaction by id. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_a3684358ec86c9b415f9041f702ca5ddb}{find\+By\+Id}} (int transaction\+Id)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Loads a single transaction with joined category name. \end{DoxyCompactList}\item 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} $>$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_ab5070a5f3d67a7d7f8be60e5357d98b1}{get\+Transactions\+By\+User\+And\+Month}} (int user\+Id, int month, int year)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Lists transactions for a user in a given calendar month. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_a8bd830a176d63b9cde5556e14a52e7fc}{get\+Total\+Spent\+By\+Category}} (int user\+Id, int category\+Id, int month, int year)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Sums expense amounts for a user/\+category/\+month (used by {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o}{Budget\+DAO}}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Data access for {\ttfamily transactions}:\+ CRUD, monthly filters, and expense rollups for budgets. 
+
+\begin{DoxyAuthor}{Author}
+Abanoub 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{com.\+example.\+a2.\+model.\+Transaction} 
+
+\doxylink{classcom_1_1example_1_1a2_1_1util_1_1_database_manager}{com.\+example.\+a2.\+util.\+Database\+Manager} 
+\end{DoxySeeAlso}
+
+
+\label{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_doc-func-members}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_ae361c652df844b01478144887d1e8d31}\index{com.example.a2.dao.TransactionDAO@{com.example.a2.dao.TransactionDAO}!createTransaction@{createTransaction}}
+\index{createTransaction@{createTransaction}!com.example.a2.dao.TransactionDAO@{com.example.a2.dao.TransactionDAO}}
+\doxysubsubsection{\texorpdfstring{createTransaction()}{createTransaction()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_ae361c652df844b01478144887d1e8d31} 
+void com.\+example.\+a2.\+dao.\+Transaction\+DAO.\+create\+Transaction (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}}}]{transaction}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Inserts a new transaction row. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transaction} & populated entity (id ignored) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on insert failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_a4d10eb8a159da4a6581c7d4fa7edc9ce}\index{com.example.a2.dao.TransactionDAO@{com.example.a2.dao.TransactionDAO}!deleteTransaction@{deleteTransaction}}
+\index{deleteTransaction@{deleteTransaction}!com.example.a2.dao.TransactionDAO@{com.example.a2.dao.TransactionDAO}}
+\doxysubsubsection{\texorpdfstring{deleteTransaction()}{deleteTransaction()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_a4d10eb8a159da4a6581c7d4fa7edc9ce} 
+void com.\+example.\+a2.\+dao.\+Transaction\+DAO.\+delete\+Transaction (\begin{DoxyParamCaption}\item[{int}]{transaction\+Id}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Deletes a transaction by id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transaction\+Id} & primary key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on delete failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_a3684358ec86c9b415f9041f702ca5ddb}\index{com.example.a2.dao.TransactionDAO@{com.example.a2.dao.TransactionDAO}!findById@{findById}}
+\index{findById@{findById}!com.example.a2.dao.TransactionDAO@{com.example.a2.dao.TransactionDAO}}
+\doxysubsubsection{\texorpdfstring{findById()}{findById()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_a3684358ec86c9b415f9041f702ca5ddb} 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} com.\+example.\+a2.\+dao.\+Transaction\+DAO.\+find\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{transaction\+Id}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Loads a single transaction with joined category name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transaction\+Id} & primary key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+entity or {\ttfamily null} if not found 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_a8bd830a176d63b9cde5556e14a52e7fc}\index{com.example.a2.dao.TransactionDAO@{com.example.a2.dao.TransactionDAO}!getTotalSpentByCategory@{getTotalSpentByCategory}}
+\index{getTotalSpentByCategory@{getTotalSpentByCategory}!com.example.a2.dao.TransactionDAO@{com.example.a2.dao.TransactionDAO}}
+\doxysubsubsection{\texorpdfstring{getTotalSpentByCategory()}{getTotalSpentByCategory()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_a8bd830a176d63b9cde5556e14a52e7fc} 
+double com.\+example.\+a2.\+dao.\+Transaction\+DAO.\+get\+Total\+Spent\+By\+Category (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{int}]{category\+Id}{, }\item[{int}]{month}{, }\item[{int}]{year}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Sums expense amounts for a user/\+category/\+month (used by {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o}{Budget\+DAO}}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+{\em category\+Id} & category filter \\
+\hline
+{\em month} & calendar month \\
+\hline
+{\em year} & calendar year \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+total spent, or {\ttfamily 0} if none 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_aa0845b5093b223f24a768620acfaed4a}\index{com.example.a2.dao.TransactionDAO@{com.example.a2.dao.TransactionDAO}!getTransactionsByUser@{getTransactionsByUser}}
+\index{getTransactionsByUser@{getTransactionsByUser}!com.example.a2.dao.TransactionDAO@{com.example.a2.dao.TransactionDAO}}
+\doxysubsubsection{\texorpdfstring{getTransactionsByUser()}{getTransactionsByUser()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_aa0845b5093b223f24a768620acfaed4a} 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} $>$ com.\+example.\+a2.\+dao.\+Transaction\+DAO.\+get\+Transactions\+By\+User (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Lists all transactions for a user with category names (newest first). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ordered transaction list 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_ab5070a5f3d67a7d7f8be60e5357d98b1}\index{com.example.a2.dao.TransactionDAO@{com.example.a2.dao.TransactionDAO}!getTransactionsByUserAndMonth@{getTransactionsByUserAndMonth}}
+\index{getTransactionsByUserAndMonth@{getTransactionsByUserAndMonth}!com.example.a2.dao.TransactionDAO@{com.example.a2.dao.TransactionDAO}}
+\doxysubsubsection{\texorpdfstring{getTransactionsByUserAndMonth()}{getTransactionsByUserAndMonth()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o_ab5070a5f3d67a7d7f8be60e5357d98b1} 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} $>$ com.\+example.\+a2.\+dao.\+Transaction\+DAO.\+get\+Transactions\+By\+User\+And\+Month (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{int}]{month}{, }\item[{int}]{year}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Lists transactions for a user in a given calendar month. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+{\em month} & month 1–12 \\
+\hline
+{\em year} & four-\/digit year \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+transactions in that month 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+dao/\+Transaction\+DAO.\+java\end{DoxyCompactItemize}

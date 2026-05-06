@@ -1,0 +1,112 @@
+\doxysection{com.\+example.\+a2.\+util.\+Threshold\+Alert\+Strategy Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy}{}\label{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy}\index{com.example.a2.util.ThresholdAlertStrategy@{com.example.a2.util.ThresholdAlertStrategy}}
+
+
+{\ttfamily \doxylink{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy}{Alert\+Strategy}} implementation that fires when {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1model_1_1_budget_a75c38334720b2fc70736bee5fbe1e42f}{Budget\+\#get\+Percentage\+Used()}} crosses a threshold.  
+
+
+Inheritance diagram for com.\+example.\+a2.\+util.\+Threshold\+Alert\+Strategy:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy_aa04d005bd612da19396cc78dc20a4e84}{Threshold\+Alert\+Strategy}} (double threshold\+Percentage)
+\begin{DoxyCompactList}\small\item\em Creates a strategy with the given usage threshold. \end{DoxyCompactList}\item 
+boolean \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy_a919ead5853097ed3875e714eebd6590e}{should\+Alert}} (\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{Budget}} budget)
+\begin{DoxyCompactList}\small\item\em Returns {\ttfamily true} when spent percentage meets or exceeds the configured threshold. \end{DoxyCompactList}\item 
+String \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy_a62232efbf9bd2d37d82b276f40ce4e47}{get\+Message}} (\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{Budget}} budget)
+\begin{DoxyCompactList}\small\item\em Formats a multi-\/line alert describing category usage and remaining funds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+{\ttfamily \doxylink{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy}{Alert\+Strategy}} implementation that fires when {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1model_1_1_budget_a75c38334720b2fc70736bee5fbe1e42f}{Budget\+\#get\+Percentage\+Used()}} crosses a threshold. 
+
+\begin{DoxyAuthor}{Author}
+Abanoub 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\doxylink{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy}{Alert\+Strategy} 
+
+\doxylink{classcom_1_1example_1_1a2_1_1service_1_1_budget_service}{com.\+example.\+a2.\+service.\+Budget\+Service} 
+\end{DoxySeeAlso}
+
+
+\label{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy_doc-constructors}
+\Hypertarget{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy_aa04d005bd612da19396cc78dc20a4e84}\index{com.example.a2.util.ThresholdAlertStrategy@{com.example.a2.util.ThresholdAlertStrategy}!ThresholdAlertStrategy@{ThresholdAlertStrategy}}
+\index{ThresholdAlertStrategy@{ThresholdAlertStrategy}!com.example.a2.util.ThresholdAlertStrategy@{com.example.a2.util.ThresholdAlertStrategy}}
+\doxysubsubsection{\texorpdfstring{ThresholdAlertStrategy()}{ThresholdAlertStrategy()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy_aa04d005bd612da19396cc78dc20a4e84} 
+com.\+example.\+a2.\+util.\+Threshold\+Alert\+Strategy.\+Threshold\+Alert\+Strategy (\begin{DoxyParamCaption}\item[{double}]{threshold\+Percentage}{}\end{DoxyParamCaption})}
+
+
+
+Creates a strategy with the given usage threshold. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threshold\+Percentage} & minimum percentage (0–100 style) to trigger alerts \\
+\hline
+\end{DoxyParams}
+
+
+\label{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy_doc-func-members}
+\Hypertarget{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy_a62232efbf9bd2d37d82b276f40ce4e47}\index{com.example.a2.util.ThresholdAlertStrategy@{com.example.a2.util.ThresholdAlertStrategy}!getMessage@{getMessage}}
+\index{getMessage@{getMessage}!com.example.a2.util.ThresholdAlertStrategy@{com.example.a2.util.ThresholdAlertStrategy}}
+\doxysubsubsection{\texorpdfstring{getMessage()}{getMessage()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy_a62232efbf9bd2d37d82b276f40ce4e47} 
+String com.\+example.\+a2.\+util.\+Threshold\+Alert\+Strategy.\+get\+Message (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{Budget}}}]{budget}{}\end{DoxyParamCaption})}
+
+
+
+Formats a multi-\/line alert describing category usage and remaining funds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em budget} & budget used for labels and amounts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+message body for {\ttfamily \doxylink{interfacecom_1_1example_1_1a2_1_1util_1_1_notification_sender}{Notification\+Sender}} 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy_a766de530a42ad860ae4011a98b7c7d0f}{com.\+example.\+a2.\+util.\+Alert\+Strategy}}.
+
+\Hypertarget{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy_a919ead5853097ed3875e714eebd6590e}\index{com.example.a2.util.ThresholdAlertStrategy@{com.example.a2.util.ThresholdAlertStrategy}!shouldAlert@{shouldAlert}}
+\index{shouldAlert@{shouldAlert}!com.example.a2.util.ThresholdAlertStrategy@{com.example.a2.util.ThresholdAlertStrategy}}
+\doxysubsubsection{\texorpdfstring{shouldAlert()}{shouldAlert()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1util_1_1_threshold_alert_strategy_a919ead5853097ed3875e714eebd6590e} 
+boolean com.\+example.\+a2.\+util.\+Threshold\+Alert\+Strategy.\+should\+Alert (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{Budget}}}]{budget}{}\end{DoxyParamCaption})}
+
+
+
+Returns {\ttfamily true} when spent percentage meets or exceeds the configured threshold. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em budget} & budget snapshot including spent and limit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether to notify the user 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{interfacecom_1_1example_1_1a2_1_1util_1_1_alert_strategy_abee6514a7eb53b3074fbe5f88a7c84f3}{com.\+example.\+a2.\+util.\+Alert\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+util/\+Threshold\+Alert\+Strategy.\+java\end{DoxyCompactItemize}

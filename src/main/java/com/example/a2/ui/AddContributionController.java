@@ -15,24 +15,49 @@ import javafx.util.StringConverter;
 import java.util.List;
 
 /**
- * Add manual savings or link an income {@link Transaction} to a {@link Goal}.
+ * Controller for {@code add-contribution.fxml}: manual amount or linking an income {@link Transaction} to a {@link Goal}.
+ * {@link TabPane} uses standard tab chrome from FXML (no custom CSS style class names declared in code).
+ *
+ * @author Abanoub
+ * @version 1.0
+ * @see GoalController
+ * @see GoalService
  */
 public class AddContributionController {
 
+    /** Header showing which goal is receiving the contribution. */
     @FXML private Label goalTitleLabel;
+    /** Switches between manual amount and transaction link tabs. */
     @FXML private TabPane modeTabs;
+    /** Manual contribution amount. */
     @FXML private TextField manualAmountField;
+    /** Income transactions not yet linked to a goal. */
     @FXML private ComboBox<Transaction> transactionComboBox;
+    /** Validation message label. */
     @FXML private Label errorLabel;
 
+    /** Target goal for this dialog. */
     private Goal goal;
+    /** Owning user id (authorization). */
     private int userId;
+    /** Goal business operations. */
     private GoalService goalService;
 
+    /**
+     * [FXML] Configures the transaction combo {@link StringConverter} for readable rows.
+     *
+     * @return nothing
+     */
     @FXML
     private void initialize() {
         clearError();
         transactionComboBox.setConverter(new StringConverter<>() {
+            /**
+             * Renders a transaction as id, category, amount, and date.
+             *
+             * @param t transaction or {@code null}
+             * @return display string
+             */
             @Override
             public String toString(Transaction t) {
                 if (t == null) {
@@ -42,6 +67,12 @@ public class AddContributionController {
                     t.getId(), t.getCategoryName(), t.getAmount(), t.getTransactionDate());
             }
 
+            /**
+             * Not used for read-only combo display.
+             *
+             * @param string ignored
+             * @return always {@code null}
+             */
             @Override
             public Transaction fromString(String string) {
                 return null;
@@ -49,6 +80,14 @@ public class AddContributionController {
         });
     }
 
+    /**
+     * Binds state for the dialog after FXML load (goal, user, service) and loads linkable transactions.
+     *
+     * @param goal         selected goal
+     * @param userId       current user id
+     * @param goalService  service instance from parent
+     * @return nothing
+     */
     public void init(Goal goal, int userId, GoalService goalService) {
         this.goal = goal;
         this.userId = userId;
@@ -66,6 +105,11 @@ public class AddContributionController {
         }
     }
 
+    /**
+     * [FXML] Applies either a manual contribution or a linked transaction based on the selected tab.
+     *
+     * @return nothing
+     */
     @FXML
     private void handleApply() {
         clearError();
@@ -96,22 +140,43 @@ public class AddContributionController {
         }
     }
 
+    /**
+     * [FXML] Closes the dialog without applying changes.
+     *
+     * @return nothing
+     */
     @FXML
     private void handleCancel() {
         close();
     }
 
+    /**
+     * Closes the modal {@link Stage}.
+     *
+     * @return nothing
+     */
     private void close() {
         Stage s = (Stage) manualAmountField.getScene().getWindow();
         s.close();
     }
 
+    /**
+     * Shows {@link #errorLabel}.
+     *
+     * @param message error text
+     * @return nothing
+     */
     private void showError(String message) {
         errorLabel.setText(message);
         errorLabel.setVisible(true);
         errorLabel.setManaged(true);
     }
 
+    /**
+     * Clears {@link #errorLabel}.
+     *
+     * @return nothing
+     */
     private void clearError() {
         errorLabel.setText("");
         errorLabel.setVisible(false);

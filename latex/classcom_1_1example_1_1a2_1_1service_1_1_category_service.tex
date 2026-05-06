@@ -1,0 +1,84 @@
+\doxysection{com.\+example.\+a2.\+service.\+Category\+Service Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_category_service}{}\label{classcom_1_1example_1_1a2_1_1service_1_1_category_service}\index{com.example.a2.service.CategoryService@{com.example.a2.service.CategoryService}}
+
+
+Thin service over {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1dao_1_1_category_d_a_o}{Category\+DAO}} for loading categories into Java\+FX controls.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_category_service_a90fbed463dc094eee6fcf146f25783f7}\label{classcom_1_1example_1_1a2_1_1service_1_1_category_service_a90fbed463dc094eee6fcf146f25783f7} 
+{\bfseries Category\+Service} ()
+\begin{DoxyCompactList}\small\item\em Constructs the service with a default DAO. \end{DoxyCompactList}\item 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_category}{Category}} $>$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_category_service_a61efddc62fe2316d091d3718b8ffe56d}{get\+All\+Categories}} ()  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Returns every category ordered by type and name. \end{DoxyCompactList}\item 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_category}{Category}} $>$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_category_service_adde7b5ce70b73c00b8a9921cacc530bc}{get\+Categories\+By\+Type}} (\doxymbox{\hyperlink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type}{Transaction\+Type}} type)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Returns categories filtered by {\ttfamily \doxylink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type}{Transaction\+Type}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Thin service over {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1dao_1_1_category_d_a_o}{Category\+DAO}} for loading categories into Java\+FX controls. 
+
+\begin{DoxyAuthor}{Author}
+Abanoub 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classcom_1_1example_1_1a2_1_1dao_1_1_category_d_a_o}{com.\+example.\+a2.\+dao.\+Category\+DAO} 
+
+\doxylink{classcom_1_1example_1_1a2_1_1model_1_1_category}{com.\+example.\+a2.\+model.\+Category} 
+\end{DoxySeeAlso}
+
+
+\label{classcom_1_1example_1_1a2_1_1service_1_1_category_service_doc-func-members}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_category_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_category_service_a61efddc62fe2316d091d3718b8ffe56d}\index{com.example.a2.service.CategoryService@{com.example.a2.service.CategoryService}!getAllCategories@{getAllCategories}}
+\index{getAllCategories@{getAllCategories}!com.example.a2.service.CategoryService@{com.example.a2.service.CategoryService}}
+\doxysubsubsection{\texorpdfstring{getAllCategories()}{getAllCategories()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_category_service_a61efddc62fe2316d091d3718b8ffe56d} 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_category}{Category}} $>$ com.\+example.\+a2.\+service.\+Category\+Service.\+get\+All\+Categories (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Returns every category ordered by type and name. 
+
+\begin{DoxyReturn}{Returns}
+full category list 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_category_service_adde7b5ce70b73c00b8a9921cacc530bc}\index{com.example.a2.service.CategoryService@{com.example.a2.service.CategoryService}!getCategoriesByType@{getCategoriesByType}}
+\index{getCategoriesByType@{getCategoriesByType}!com.example.a2.service.CategoryService@{com.example.a2.service.CategoryService}}
+\doxysubsubsection{\texorpdfstring{getCategoriesByType()}{getCategoriesByType()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_category_service_adde7b5ce70b73c00b8a9921cacc530bc} 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_category}{Category}} $>$ com.\+example.\+a2.\+service.\+Category\+Service.\+get\+Categories\+By\+Type (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type}{Transaction\+Type}}}]{type}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Returns categories filtered by {\ttfamily \doxylink{enumcom_1_1example_1_1a2_1_1model_1_1_transaction_type}{Transaction\+Type}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & INCOME or EXPENSE filter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+matching categories 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+service/\+Category\+Service.\+java\end{DoxyCompactItemize}

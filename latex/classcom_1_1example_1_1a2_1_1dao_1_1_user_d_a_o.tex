@@ -1,0 +1,135 @@
+\doxysection{com.\+example.\+a2.\+dao.\+User\+DAO Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o}{}\label{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o}\index{com.example.a2.dao.UserDAO@{com.example.a2.dao.UserDAO}}
+
+
+Data access for {\ttfamily users}:\+ registration lookup and credential loading.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o_ae3d98e350a4b15cbbc780023c51d035d}{User\+DAO}} ()
+\begin{DoxyCompactList}\small\item\em Opens a DAO using the singleton database connection. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o_a09c5e61ec68c9038e23d1c331bcbdff3}{create\+User}} (String email, String password\+Hash)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Inserts a new user with email and password hash. \end{DoxyCompactList}\item 
+Optional$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_user}{User}} $>$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o_aede593af591cf6140842bd3cd71b8a03}{find\+By\+Email}} (String email)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Finds a user by exact email match. \end{DoxyCompactList}\item 
+Optional$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_user}{User}} $>$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o_ad4c1bc21bb4af8d347ca2302c5e6bcc3}{find\+By\+Id}} (int id)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Finds a user by primary key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Data access for {\ttfamily users}:\+ registration lookup and credential loading. 
+
+\begin{DoxyAuthor}{Author}
+Abanoub 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classcom_1_1example_1_1a2_1_1model_1_1_user}{com.\+example.\+a2.\+model.\+User} 
+
+\doxylink{classcom_1_1example_1_1a2_1_1util_1_1_database_manager}{com.\+example.\+a2.\+util.\+Database\+Manager} 
+\end{DoxySeeAlso}
+
+
+\label{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o_doc-constructors}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o_ae3d98e350a4b15cbbc780023c51d035d}\index{com.example.a2.dao.UserDAO@{com.example.a2.dao.UserDAO}!UserDAO@{UserDAO}}
+\index{UserDAO@{UserDAO}!com.example.a2.dao.UserDAO@{com.example.a2.dao.UserDAO}}
+\doxysubsubsection{\texorpdfstring{UserDAO()}{UserDAO()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o_ae3d98e350a4b15cbbc780023c51d035d} 
+com.\+example.\+a2.\+dao.\+User\+DAO.\+User\+DAO (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Opens a DAO using the singleton database connection. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Runtime\+Exception} & if {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1util_1_1_database_manager}{Database\+Manager}} cannot supply a connection \\
+\hline
+\end{DoxyExceptions}
+
+
+\label{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o_doc-func-members}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o_a09c5e61ec68c9038e23d1c331bcbdff3}\index{com.example.a2.dao.UserDAO@{com.example.a2.dao.UserDAO}!createUser@{createUser}}
+\index{createUser@{createUser}!com.example.a2.dao.UserDAO@{com.example.a2.dao.UserDAO}}
+\doxysubsubsection{\texorpdfstring{createUser()}{createUser()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o_a09c5e61ec68c9038e23d1c331bcbdff3} 
+void com.\+example.\+a2.\+dao.\+User\+DAO.\+create\+User (\begin{DoxyParamCaption}\item[{String}]{email}{, }\item[{String}]{password\+Hash}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Inserts a new user with email and password hash. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & unique email \\
+\hline
+{\em password\+Hash} & stored hash string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & if the insert fails \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o_aede593af591cf6140842bd3cd71b8a03}\index{com.example.a2.dao.UserDAO@{com.example.a2.dao.UserDAO}!findByEmail@{findByEmail}}
+\index{findByEmail@{findByEmail}!com.example.a2.dao.UserDAO@{com.example.a2.dao.UserDAO}}
+\doxysubsubsection{\texorpdfstring{findByEmail()}{findByEmail()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o_aede593af591cf6140842bd3cd71b8a03} 
+Optional$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_user}{User}} $>$ com.\+example.\+a2.\+dao.\+User\+DAO.\+find\+By\+Email (\begin{DoxyParamCaption}\item[{String}]{email}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Finds a user by exact email match. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & login email \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+present {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1model_1_1_user}{User}} if found, else empty 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o_ad4c1bc21bb4af8d347ca2302c5e6bcc3}\index{com.example.a2.dao.UserDAO@{com.example.a2.dao.UserDAO}!findById@{findById}}
+\index{findById@{findById}!com.example.a2.dao.UserDAO@{com.example.a2.dao.UserDAO}}
+\doxysubsubsection{\texorpdfstring{findById()}{findById()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o_ad4c1bc21bb4af8d347ca2302c5e6bcc3} 
+Optional$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_user}{User}} $>$ com.\+example.\+a2.\+dao.\+User\+DAO.\+find\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Finds a user by primary key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & user id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+present {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1model_1_1_user}{User}} if found, else empty 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+dao/\+User\+DAO.\+java\end{DoxyCompactItemize}

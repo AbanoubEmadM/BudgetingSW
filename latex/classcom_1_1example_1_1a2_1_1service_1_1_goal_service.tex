@@ -1,0 +1,423 @@
+\doxysection{com.\+example.\+a2.\+service.\+Goal\+Service Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_goal_service}{}\label{classcom_1_1example_1_1a2_1_1service_1_1_goal_service}\index{com.example.a2.service.GoalService@{com.example.a2.service.GoalService}}
+
+
+Business rules, validation, and projections for user {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}} entities.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a51e245152c6c2172646023ff7a47743b}\label{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a51e245152c6c2172646023ff7a47743b} 
+{\bfseries Goal\+Service} ()
+\begin{DoxyCompactList}\small\item\em Constructs the service with default DAO instances. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a7230924a2119ae34eb9548194cf64ade}{Goal\+Service}} (\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o}{Goal\+DAO}} goal\+DAO, \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o}{Transaction\+DAO}} transaction\+DAO)
+\begin{DoxyCompactList}\small\item\em Constructs the service with injected DAOs (testing /\+ DI). \end{DoxyCompactList}\item 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}} $>$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a84ce27e84ca6fe7e28088880b8674030}{load\+Goals\+For\+User}} (int user\+Id)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Loads all goals for a user from persistence. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}} \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a0bc36e3a57f2ae95bb228aaf2605fbc5}{create\+Goal}} (int user\+Id, String name, double target\+Amount, Local\+Date deadline, Double initial\+Saved\+Amount)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Validates inputs, inserts the goal, and optionally records an initial contribution. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_acf4091bbf9edcb3d6fa4f7e39bd27cb7}{update\+Goal}} (\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}} existing, String name, double target\+Amount, Local\+Date deadline)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Updates an existing goal after validating target vs saved and deadline rules. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a309fabf2c6b510d6d103bcd6bae805ba}{delete\+Goal}} (int goal\+Id, int user\+Id)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Deletes a goal owned by the user. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a6de70606943f6d9b67f2957beb47633f}{add\+Manual\+Contribution}} (int goal\+Id, int user\+Id, double amount)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Adds a manual contribution toward a goal. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_ad1f5d94b79af31cfd488f8e648d191b0}{add\+Contribution\+From\+Transaction}} (int goal\+Id, int user\+Id, int transaction\+Id)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Links an income transaction to a goal, applying the full transaction amount once. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}} \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_ad90c91c9b9844f6ff2e3516a78db600b}{refresh\+Goal}} (int goal\+Id, int user\+Id)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Reloads a single goal from the database. \end{DoxyCompactList}\item 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} $>$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a68753a8865e0ac51b734a1da358aaa71}{list\+Linkable\+Income\+Transactions}} (int user\+Id)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Lists income transactions for the user that are not yet linked to any goal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a57d7000231ec8d2f31792b54fdce4e7f}{validate\+Name}} (String name)
+\begin{DoxyCompactList}\small\item\em Validates that a goal name is non-\/blank. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_aadcf50d1f8e22ee4cef1cab6424e9996}{validate\+Target\+Amount}} (double target\+Amount)
+\begin{DoxyCompactList}\small\item\em Validates that the target amount is positive. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a39ad2479936d9f1bf0c65a072b5ef36c}{validate\+Deadline\+Future}} (Local\+Date deadline)
+\begin{DoxyCompactList}\small\item\em Validates that a new goal\textquotesingle{}s deadline is strictly after today. \end{DoxyCompactList}\item 
+static double \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a6adea675eb90a6b969564eb805df51d7}{remaining\+Amount}} (double saved\+Amount, double target\+Amount)
+\begin{DoxyCompactList}\small\item\em Computes remaining amount toward the target (never negative). \end{DoxyCompactList}\item 
+static double \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_ad678b18d981db1d5a5bf39c28b50b700}{monthly\+Savings\+Needed}} (double saved\+Amount, double target\+Amount, Local\+Date deadline)
+\begin{DoxyCompactList}\small\item\em Estimates monthly savings needed as remaining divided by fractional months until deadline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Business rules, validation, and projections for user {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}} entities. 
+
+\begin{DoxyAuthor}{Author}
+Abanoub 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o}{com.\+example.\+a2.\+dao.\+Goal\+DAO} 
+
+\doxylink{classcom_1_1example_1_1a2_1_1ui_1_1_goal_controller}{com.\+example.\+a2.\+ui.\+Goal\+Controller} 
+\end{DoxySeeAlso}
+
+
+\label{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_doc-constructors}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a7230924a2119ae34eb9548194cf64ade}\index{com.example.a2.service.GoalService@{com.example.a2.service.GoalService}!GoalService@{GoalService}}
+\index{GoalService@{GoalService}!com.example.a2.service.GoalService@{com.example.a2.service.GoalService}}
+\doxysubsubsection{\texorpdfstring{GoalService()}{GoalService()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a7230924a2119ae34eb9548194cf64ade} 
+com.\+example.\+a2.\+service.\+Goal\+Service.\+Goal\+Service (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_goal_d_a_o}{Goal\+DAO}}}]{goal\+DAO}{, }\item[{\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o}{Transaction\+DAO}}}]{transaction\+DAO}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the service with injected DAOs (testing /\+ DI). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em goal\+DAO} & goal persistence \\
+\hline
+{\em transaction\+DAO} & transaction persistence \\
+\hline
+\end{DoxyParams}
+
+
+\label{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_doc-func-members}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_ad1f5d94b79af31cfd488f8e648d191b0}\index{com.example.a2.service.GoalService@{com.example.a2.service.GoalService}!addContributionFromTransaction@{addContributionFromTransaction}}
+\index{addContributionFromTransaction@{addContributionFromTransaction}!com.example.a2.service.GoalService@{com.example.a2.service.GoalService}}
+\doxysubsubsection{\texorpdfstring{addContributionFromTransaction()}{addContributionFromTransaction()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_ad1f5d94b79af31cfd488f8e648d191b0} 
+void com.\+example.\+a2.\+service.\+Goal\+Service.\+add\+Contribution\+From\+Transaction (\begin{DoxyParamCaption}\item[{int}]{goal\+Id}{, }\item[{int}]{user\+Id}{, }\item[{int}]{transaction\+Id}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Links an income transaction to a goal, applying the full transaction amount once. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em goal\+Id} & goal id \\
+\hline
+{\em user\+Id} & owning user \\
+\hline
+{\em transaction\+Id} & income transaction id not yet linked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on persistence failure \\
+\hline
+{\em Illegal\+Argument\+Exception} & if the transaction is invalid or already linked \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a6de70606943f6d9b67f2957beb47633f}\index{com.example.a2.service.GoalService@{com.example.a2.service.GoalService}!addManualContribution@{addManualContribution}}
+\index{addManualContribution@{addManualContribution}!com.example.a2.service.GoalService@{com.example.a2.service.GoalService}}
+\doxysubsubsection{\texorpdfstring{addManualContribution()}{addManualContribution()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a6de70606943f6d9b67f2957beb47633f} 
+void com.\+example.\+a2.\+service.\+Goal\+Service.\+add\+Manual\+Contribution (\begin{DoxyParamCaption}\item[{int}]{goal\+Id}{, }\item[{int}]{user\+Id}{, }\item[{double}]{amount}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Adds a manual contribution toward a goal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em goal\+Id} & goal id \\
+\hline
+{\em user\+Id} & owning user \\
+\hline
+{\em amount} & positive increment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on persistence failure \\
+\hline
+{\em Illegal\+Argument\+Exception} & if amount is not positive \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a0bc36e3a57f2ae95bb228aaf2605fbc5}\index{com.example.a2.service.GoalService@{com.example.a2.service.GoalService}!createGoal@{createGoal}}
+\index{createGoal@{createGoal}!com.example.a2.service.GoalService@{com.example.a2.service.GoalService}}
+\doxysubsubsection{\texorpdfstring{createGoal()}{createGoal()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a0bc36e3a57f2ae95bb228aaf2605fbc5} 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}} com.\+example.\+a2.\+service.\+Goal\+Service.\+create\+Goal (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{String}]{name}{, }\item[{double}]{target\+Amount}{, }\item[{Local\+Date}]{deadline}{, }\item[{Double}]{initial\+Saved\+Amount}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Validates inputs, inserts the goal, and optionally records an initial contribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+{\em name} & goal title \\
+\hline
+{\em target\+Amount} & savings target \\
+\hline
+{\em deadline} & must be strictly after today \\
+\hline
+{\em initial\+Saved\+Amount} & optional starting balance, or {\ttfamily null} for zero \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+persisted goal (refreshed if initial contribution applied) 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on persistence failure \\
+\hline
+{\em Illegal\+Argument\+Exception} & if validation fails \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a309fabf2c6b510d6d103bcd6bae805ba}\index{com.example.a2.service.GoalService@{com.example.a2.service.GoalService}!deleteGoal@{deleteGoal}}
+\index{deleteGoal@{deleteGoal}!com.example.a2.service.GoalService@{com.example.a2.service.GoalService}}
+\doxysubsubsection{\texorpdfstring{deleteGoal()}{deleteGoal()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a309fabf2c6b510d6d103bcd6bae805ba} 
+void com.\+example.\+a2.\+service.\+Goal\+Service.\+delete\+Goal (\begin{DoxyParamCaption}\item[{int}]{goal\+Id}{, }\item[{int}]{user\+Id}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Deletes a goal owned by the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em goal\+Id} & goal id \\
+\hline
+{\em user\+Id} & owning user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on delete failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a68753a8865e0ac51b734a1da358aaa71}\index{com.example.a2.service.GoalService@{com.example.a2.service.GoalService}!listLinkableIncomeTransactions@{listLinkableIncomeTransactions}}
+\index{listLinkableIncomeTransactions@{listLinkableIncomeTransactions}!com.example.a2.service.GoalService@{com.example.a2.service.GoalService}}
+\doxysubsubsection{\texorpdfstring{listLinkableIncomeTransactions()}{listLinkableIncomeTransactions()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a68753a8865e0ac51b734a1da358aaa71} 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_transaction}{Transaction}} $>$ com.\+example.\+a2.\+service.\+Goal\+Service.\+list\+Linkable\+Income\+Transactions (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Lists income transactions for the user that are not yet linked to any goal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+linkable income rows 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a84ce27e84ca6fe7e28088880b8674030}\index{com.example.a2.service.GoalService@{com.example.a2.service.GoalService}!loadGoalsForUser@{loadGoalsForUser}}
+\index{loadGoalsForUser@{loadGoalsForUser}!com.example.a2.service.GoalService@{com.example.a2.service.GoalService}}
+\doxysubsubsection{\texorpdfstring{loadGoalsForUser()}{loadGoalsForUser()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a84ce27e84ca6fe7e28088880b8674030} 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}} $>$ com.\+example.\+a2.\+service.\+Goal\+Service.\+load\+Goals\+For\+User (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Loads all goals for a user from persistence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ordered goal list 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_ad678b18d981db1d5a5bf39c28b50b700}\index{com.example.a2.service.GoalService@{com.example.a2.service.GoalService}!monthlySavingsNeeded@{monthlySavingsNeeded}}
+\index{monthlySavingsNeeded@{monthlySavingsNeeded}!com.example.a2.service.GoalService@{com.example.a2.service.GoalService}}
+\doxysubsubsection{\texorpdfstring{monthlySavingsNeeded()}{monthlySavingsNeeded()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_ad678b18d981db1d5a5bf39c28b50b700} 
+double com.\+example.\+a2.\+service.\+Goal\+Service.\+monthly\+Savings\+Needed (\begin{DoxyParamCaption}\item[{double}]{saved\+Amount}{, }\item[{double}]{target\+Amount}{, }\item[{Local\+Date}]{deadline}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Estimates monthly savings needed as remaining divided by fractional months until deadline. 
+
+If the deadline is not after today, returns the full remaining amount as catch-\/up.
+
+
+\begin{DoxyParams}{Parameters}
+{\em saved\+Amount} & current saved total \\
+\hline
+{\em target\+Amount} & goal target \\
+\hline
+{\em deadline} & goal deadline date \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+suggested monthly savings rate 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_ad90c91c9b9844f6ff2e3516a78db600b}\index{com.example.a2.service.GoalService@{com.example.a2.service.GoalService}!refreshGoal@{refreshGoal}}
+\index{refreshGoal@{refreshGoal}!com.example.a2.service.GoalService@{com.example.a2.service.GoalService}}
+\doxysubsubsection{\texorpdfstring{refreshGoal()}{refreshGoal()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_ad90c91c9b9844f6ff2e3516a78db600b} 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}} com.\+example.\+a2.\+service.\+Goal\+Service.\+refresh\+Goal (\begin{DoxyParamCaption}\item[{int}]{goal\+Id}{, }\item[{int}]{user\+Id}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Reloads a single goal from the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em goal\+Id} & goal id \\
+\hline
+{\em user\+Id} & owning user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+goal or {\ttfamily null} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a6adea675eb90a6b969564eb805df51d7}\index{com.example.a2.service.GoalService@{com.example.a2.service.GoalService}!remainingAmount@{remainingAmount}}
+\index{remainingAmount@{remainingAmount}!com.example.a2.service.GoalService@{com.example.a2.service.GoalService}}
+\doxysubsubsection{\texorpdfstring{remainingAmount()}{remainingAmount()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a6adea675eb90a6b969564eb805df51d7} 
+double com.\+example.\+a2.\+service.\+Goal\+Service.\+remaining\+Amount (\begin{DoxyParamCaption}\item[{double}]{saved\+Amount}{, }\item[{double}]{target\+Amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Computes remaining amount toward the target (never negative). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em saved\+Amount} & current saved total \\
+\hline
+{\em target\+Amount} & goal target \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily max(0, target -\/ saved)} 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_acf4091bbf9edcb3d6fa4f7e39bd27cb7}\index{com.example.a2.service.GoalService@{com.example.a2.service.GoalService}!updateGoal@{updateGoal}}
+\index{updateGoal@{updateGoal}!com.example.a2.service.GoalService@{com.example.a2.service.GoalService}}
+\doxysubsubsection{\texorpdfstring{updateGoal()}{updateGoal()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_acf4091bbf9edcb3d6fa4f7e39bd27cb7} 
+void com.\+example.\+a2.\+service.\+Goal\+Service.\+update\+Goal (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_goal}{Goal}}}]{existing}{, }\item[{String}]{name}{, }\item[{double}]{target\+Amount}{, }\item[{Local\+Date}]{deadline}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Updates an existing goal after validating target vs saved and deadline rules. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em existing} & goal row to mutate and persist \\
+\hline
+{\em name} & new title \\
+\hline
+{\em target\+Amount} & new target (must be \texorpdfstring{$>$}{>}= saved) \\
+\hline
+{\em deadline} & new deadline (not before today) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on update failure \\
+\hline
+{\em Illegal\+Argument\+Exception} & if validation fails \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a39ad2479936d9f1bf0c65a072b5ef36c}\index{com.example.a2.service.GoalService@{com.example.a2.service.GoalService}!validateDeadlineFuture@{validateDeadlineFuture}}
+\index{validateDeadlineFuture@{validateDeadlineFuture}!com.example.a2.service.GoalService@{com.example.a2.service.GoalService}}
+\doxysubsubsection{\texorpdfstring{validateDeadlineFuture()}{validateDeadlineFuture()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a39ad2479936d9f1bf0c65a072b5ef36c} 
+void com.\+example.\+a2.\+service.\+Goal\+Service.\+validate\+Deadline\+Future (\begin{DoxyParamCaption}\item[{Local\+Date}]{deadline}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Validates that a new goal\textquotesingle{}s deadline is strictly after today. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deadline} & proposed deadline \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & if null or not in the future \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a57d7000231ec8d2f31792b54fdce4e7f}\index{com.example.a2.service.GoalService@{com.example.a2.service.GoalService}!validateName@{validateName}}
+\index{validateName@{validateName}!com.example.a2.service.GoalService@{com.example.a2.service.GoalService}}
+\doxysubsubsection{\texorpdfstring{validateName()}{validateName()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_a57d7000231ec8d2f31792b54fdce4e7f} 
+void com.\+example.\+a2.\+service.\+Goal\+Service.\+validate\+Name (\begin{DoxyParamCaption}\item[{String}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Validates that a goal name is non-\/blank. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & raw name input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & if empty or whitespace only \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_aadcf50d1f8e22ee4cef1cab6424e9996}\index{com.example.a2.service.GoalService@{com.example.a2.service.GoalService}!validateTargetAmount@{validateTargetAmount}}
+\index{validateTargetAmount@{validateTargetAmount}!com.example.a2.service.GoalService@{com.example.a2.service.GoalService}}
+\doxysubsubsection{\texorpdfstring{validateTargetAmount()}{validateTargetAmount()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_goal_service_aadcf50d1f8e22ee4cef1cab6424e9996} 
+void com.\+example.\+a2.\+service.\+Goal\+Service.\+validate\+Target\+Amount (\begin{DoxyParamCaption}\item[{double}]{target\+Amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Validates that the target amount is positive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+Amount} & proposed target \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & if not greater than zero \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+service/\+Goal\+Service.\+java\end{DoxyCompactItemize}

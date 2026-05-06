@@ -17,34 +17,60 @@ import javafx.stage.Stage;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * Controller for {@code add-transaction.fxml}: captures type, category, amount, date, and description.
+ * Buttons use inline styles ({@code -fx-background-color}) from FXML; no custom style class names on nodes.
+ *
+ * @author Abanoub
+ * @version 1.0
+ * @see DashboardController
+ * @see TransactionService
+ */
 public class AddTransactionController {
 
+    /** Income vs expense selector. */
     @FXML private ComboBox<TransactionType> typeComboBox;
+    /** Categories filtered by selected type. */
     @FXML private ComboBox<Category> categoryComboBox;
+    /** Decimal amount entry. */
     @FXML private TextField amountField;
+    /** Transaction effective date. */
     @FXML private DatePicker datePicker;
+    /** Optional memo. */
     @FXML private TextArea descriptionArea;
+    /** Validation message label (typically red via FXML or runtime). */
     @FXML private Label errorLabel;
 
+    /** Loads categories. */
     private final CategoryService categoryService = new CategoryService();
+    /** Shared with {@link TransactionService} for budget alerts. */
     private final BudgetService budgetService = new BudgetService();
+    /** Persists transactions and triggers alerts. */
     private final TransactionService transactionService = new TransactionService(budgetService);
+    /** Current user id for new rows. */
     private final AuthenticationManager authManager = AuthenticationManager.getInstance();
 
+    /**
+     * [FXML] Initializes combo boxes, default date, and category list for the default type.
+     *
+     * @return nothing
+     */
     @FXML
     private void initialize() {
-        // Setup type combo box
         typeComboBox.setItems(FXCollections.observableArrayList(TransactionType.values()));
         typeComboBox.getSelectionModel().selectFirst();
         typeComboBox.setOnAction(e -> updateCategories());
 
-        // Set default date to today
         datePicker.setValue(LocalDate.now());
 
-        // Load initial categories
         updateCategories();
     }
 
+    /**
+     * Reloads {@link #categoryComboBox} items for the selected {@link TransactionType}.
+     *
+     * @return nothing
+     */
     private void updateCategories() {
         try {
             TransactionType selectedType = typeComboBox.getValue();
@@ -60,9 +86,13 @@ public class AddTransactionController {
         }
     }
 
+    /**
+     * [FXML] Validates input, builds a {@link Transaction} via {@link TransactionFactory}, saves, and closes.
+     *
+     * @return nothing
+     */
     @FXML
     private void handleSave() {
-        // Validate inputs
         if (typeComboBox.getValue() == null) {
             showError("Please select transaction type");
             return;
@@ -95,7 +125,6 @@ public class AddTransactionController {
             LocalDate date = datePicker.getValue();
             String description = descriptionArea.getText().trim();
 
-            // Create transaction using factory
             Transaction transaction = TransactionFactory.createTransaction(
                 authManager.getCurrentUser().getId(),
                 amount,
@@ -105,10 +134,8 @@ public class AddTransactionController {
                 description
             );
 
-            // Save transaction
             transactionService.addTransaction(transaction, new UINotificationSender());
 
-            // Close window
             handleCancel();
 
         } catch (NumberFormatException e) {
@@ -118,12 +145,23 @@ public class AddTransactionController {
         }
     }
 
+    /**
+     * [FXML] Closes the modal dialog without persisting.
+     *
+     * @return nothing
+     */
     @FXML
     private void handleCancel() {
         Stage stage = (Stage) amountField.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Displays a validation message on {@link #errorLabel}.
+     *
+     * @param message error text
+     * @return nothing
+     */
     private void showError(String message) {
         errorLabel.setText(message);
         errorLabel.setVisible(true);

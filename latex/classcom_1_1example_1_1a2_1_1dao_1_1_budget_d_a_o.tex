@@ -1,0 +1,124 @@
+\doxysection{com.\+example.\+a2.\+dao.\+Budget\+DAO Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o}{}\label{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o}\index{com.example.a2.dao.BudgetDAO@{com.example.a2.dao.BudgetDAO}}
+
+
+Data access for {\ttfamily budgets}:\+ upsert monthly limits and join category names and spent totals.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o_ab41c186961fed420b85223ffc4d042a3}\label{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o_ab41c186961fed420b85223ffc4d042a3} 
+{\bfseries Budget\+DAO} ()
+\begin{DoxyCompactList}\small\item\em Constructs the DAO with a new {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o}{Transaction\+DAO}} for spent aggregation. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o_a330dcef84f6b988ba73083457eb90160}{create\+Or\+Update\+Budget}} (\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{Budget}} budget)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Inserts or updates a monthly budget row (SQLite {\ttfamily ON CONFLICT} upsert). \end{DoxyCompactList}\item 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{Budget}} $>$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o_a7ba1420d12829071dc56634b90063711}{get\+Budgets\+By\+User\+And\+Month}} (int user\+Id, int month, int year)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Lists all budgets for a user/\+month with spent totals filled in. \end{DoxyCompactList}\item 
+Optional$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{Budget}} $>$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o_aff6d1e1df62580b788504f698ce867cb}{get\+Budget\+By\+Category\+And\+Month}} (int user\+Id, int category\+Id, int month, int year)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Fetches a single budget cell if defined for the user/\+category/\+month. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Data access for {\ttfamily budgets}:\+ upsert monthly limits and join category names and spent totals. 
+
+\begin{DoxyAuthor}{Author}
+Abanoub 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{com.\+example.\+a2.\+model.\+Budget} 
+
+\doxylink{classcom_1_1example_1_1a2_1_1dao_1_1_transaction_d_a_o}{Transaction\+DAO} 
+\end{DoxySeeAlso}
+
+
+\label{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o_doc-func-members}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o_a330dcef84f6b988ba73083457eb90160}\index{com.example.a2.dao.BudgetDAO@{com.example.a2.dao.BudgetDAO}!createOrUpdateBudget@{createOrUpdateBudget}}
+\index{createOrUpdateBudget@{createOrUpdateBudget}!com.example.a2.dao.BudgetDAO@{com.example.a2.dao.BudgetDAO}}
+\doxysubsubsection{\texorpdfstring{createOrUpdateBudget()}{createOrUpdateBudget()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o_a330dcef84f6b988ba73083457eb90160} 
+void com.\+example.\+a2.\+dao.\+Budget\+DAO.\+create\+Or\+Update\+Budget (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{Budget}}}]{budget}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Inserts or updates a monthly budget row (SQLite {\ttfamily ON CONFLICT} upsert). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em budget} & user, category, month, year, and amount \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on persistence failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o_aff6d1e1df62580b788504f698ce867cb}\index{com.example.a2.dao.BudgetDAO@{com.example.a2.dao.BudgetDAO}!getBudgetByCategoryAndMonth@{getBudgetByCategoryAndMonth}}
+\index{getBudgetByCategoryAndMonth@{getBudgetByCategoryAndMonth}!com.example.a2.dao.BudgetDAO@{com.example.a2.dao.BudgetDAO}}
+\doxysubsubsection{\texorpdfstring{getBudgetByCategoryAndMonth()}{getBudgetByCategoryAndMonth()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o_aff6d1e1df62580b788504f698ce867cb} 
+Optional$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{Budget}} $>$ com.\+example.\+a2.\+dao.\+Budget\+DAO.\+get\+Budget\+By\+Category\+And\+Month (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{int}]{category\+Id}{, }\item[{int}]{month}{, }\item[{int}]{year}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Fetches a single budget cell if defined for the user/\+category/\+month. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+{\em category\+Id} & category key \\
+\hline
+{\em month} & month \\
+\hline
+{\em year} & year \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+budget with spent, if a row exists 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o_a7ba1420d12829071dc56634b90063711}\index{com.example.a2.dao.BudgetDAO@{com.example.a2.dao.BudgetDAO}!getBudgetsByUserAndMonth@{getBudgetsByUserAndMonth}}
+\index{getBudgetsByUserAndMonth@{getBudgetsByUserAndMonth}!com.example.a2.dao.BudgetDAO@{com.example.a2.dao.BudgetDAO}}
+\doxysubsubsection{\texorpdfstring{getBudgetsByUserAndMonth()}{getBudgetsByUserAndMonth()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1dao_1_1_budget_d_a_o_a7ba1420d12829071dc56634b90063711} 
+List$<$ \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_budget}{Budget}} $>$ com.\+example.\+a2.\+dao.\+Budget\+DAO.\+get\+Budgets\+By\+User\+And\+Month (\begin{DoxyParamCaption}\item[{int}]{user\+Id}{, }\item[{int}]{month}{, }\item[{int}]{year}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Lists all budgets for a user/\+month with spent totals filled in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & owning user \\
+\hline
+{\em month} & calendar month \\
+\hline
+{\em year} & calendar year \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+budgets including {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1model_1_1_budget_aec866816959abb8125080494a1bf939e}{Budget\+\#set\+Spent(double)}} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & on query failure \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+dao/\+Budget\+DAO.\+java\end{DoxyCompactItemize}

@@ -1,0 +1,153 @@
+\doxysection{com.\+example.\+a2.\+service.\+Authentication\+Manager Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager}{}\label{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager}\index{com.example.a2.service.AuthenticationManager@{com.example.a2.service.AuthenticationManager}}
+
+
+Singleton managing registration, login, logout, and the current {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1model_1_1_user}{User}} session.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a3bfcefbaebfe82e432fe9a72aaeb35b8}{register}} (String email, String password)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Registers a new user if the email is not already taken. \end{DoxyCompactList}\item 
+boolean \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a60dc32da34b6edeb77d534dc25c1e039}{login}} (String email, String password)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Validates credentials and sets {\ttfamily \doxylink{}{current\+User}} on success. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a75c377399ace98b6ebc01dc20a7e27f6}{logout}} ()
+\begin{DoxyCompactList}\small\item\em Clears the current session user. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_user}{User}} \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a3eb817c66df4c130e2e0dabad085f511}{get\+Current\+User}} ()
+\begin{DoxyCompactList}\small\item\em Returns the logged-\/in user, if any. \end{DoxyCompactList}\item 
+boolean \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a3e7e571e7755eb3270fd2ba0a7e6317d}{is\+Logged\+In}} ()
+\begin{DoxyCompactList}\small\item\em Returns whether a user is currently authenticated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static synchronized Authentication\+Manager \doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_af9da1f496bc2d3ddc2aa533548af3982}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Returns the global {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager}{Authentication\+Manager}} instance (thread-\/safe lazy init). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Singleton managing registration, login, logout, and the current {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1model_1_1_user}{User}} session. 
+
+\begin{DoxyAuthor}{Author}
+Abanoub 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classcom_1_1example_1_1a2_1_1dao_1_1_user_d_a_o}{com.\+example.\+a2.\+dao.\+User\+DAO} 
+
+\doxylink{classcom_1_1example_1_1a2_1_1ui_1_1_login_controller}{com.\+example.\+a2.\+ui.\+Login\+Controller} 
+\end{DoxySeeAlso}
+
+
+\label{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_doc-func-members}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a3eb817c66df4c130e2e0dabad085f511}\index{com.example.a2.service.AuthenticationManager@{com.example.a2.service.AuthenticationManager}!getCurrentUser@{getCurrentUser}}
+\index{getCurrentUser@{getCurrentUser}!com.example.a2.service.AuthenticationManager@{com.example.a2.service.AuthenticationManager}}
+\doxysubsubsection{\texorpdfstring{getCurrentUser()}{getCurrentUser()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a3eb817c66df4c130e2e0dabad085f511} 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_user}{User}} com.\+example.\+a2.\+service.\+Authentication\+Manager.\+get\+Current\+User (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the logged-\/in user, if any. 
+
+\begin{DoxyReturn}{Returns}
+current user or {\ttfamily null} 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_af9da1f496bc2d3ddc2aa533548af3982}\index{com.example.a2.service.AuthenticationManager@{com.example.a2.service.AuthenticationManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!com.example.a2.service.AuthenticationManager@{com.example.a2.service.AuthenticationManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_af9da1f496bc2d3ddc2aa533548af3982} 
+synchronized Authentication\+Manager com.\+example.\+a2.\+service.\+Authentication\+Manager.\+get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the global {\ttfamily \doxylink{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager}{Authentication\+Manager}} instance (thread-\/safe lazy init). 
+
+\begin{DoxyReturn}{Returns}
+singleton instance 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a3e7e571e7755eb3270fd2ba0a7e6317d}\index{com.example.a2.service.AuthenticationManager@{com.example.a2.service.AuthenticationManager}!isLoggedIn@{isLoggedIn}}
+\index{isLoggedIn@{isLoggedIn}!com.example.a2.service.AuthenticationManager@{com.example.a2.service.AuthenticationManager}}
+\doxysubsubsection{\texorpdfstring{isLoggedIn()}{isLoggedIn()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a3e7e571e7755eb3270fd2ba0a7e6317d} 
+boolean com.\+example.\+a2.\+service.\+Authentication\+Manager.\+is\+Logged\+In (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns whether a user is currently authenticated. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if {\ttfamily \doxylink{}{current\+User}} is non-\/null 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a60dc32da34b6edeb77d534dc25c1e039}\index{com.example.a2.service.AuthenticationManager@{com.example.a2.service.AuthenticationManager}!login@{login}}
+\index{login@{login}!com.example.a2.service.AuthenticationManager@{com.example.a2.service.AuthenticationManager}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a60dc32da34b6edeb77d534dc25c1e039} 
+boolean com.\+example.\+a2.\+service.\+Authentication\+Manager.\+login (\begin{DoxyParamCaption}\item[{String}]{email}{, }\item[{String}]{password}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Validates credentials and sets {\ttfamily \doxylink{}{current\+User}} on success. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & login email \\
+\hline
+{\em password} & plain password to verify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if login succeeded 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & if the lookup fails \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a75c377399ace98b6ebc01dc20a7e27f6}\index{com.example.a2.service.AuthenticationManager@{com.example.a2.service.AuthenticationManager}!logout@{logout}}
+\index{logout@{logout}!com.example.a2.service.AuthenticationManager@{com.example.a2.service.AuthenticationManager}}
+\doxysubsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a75c377399ace98b6ebc01dc20a7e27f6} 
+void com.\+example.\+a2.\+service.\+Authentication\+Manager.\+logout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clears the current session user. 
+
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a3bfcefbaebfe82e432fe9a72aaeb35b8}\index{com.example.a2.service.AuthenticationManager@{com.example.a2.service.AuthenticationManager}!register@{register}}
+\index{register@{register}!com.example.a2.service.AuthenticationManager@{com.example.a2.service.AuthenticationManager}}
+\doxysubsubsection{\texorpdfstring{register()}{register()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a3bfcefbaebfe82e432fe9a72aaeb35b8} 
+boolean com.\+example.\+a2.\+service.\+Authentication\+Manager.\+register (\begin{DoxyParamCaption}\item[{String}]{email}{, }\item[{String}]{password}{}\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Registers a new user if the email is not already taken. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & unique login email \\
+\hline
+{\em password} & plain password (hashed before insert) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if registration succeeded 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & if persistence fails \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+service/\+Authentication\+Manager.\+java\end{DoxyCompactItemize}

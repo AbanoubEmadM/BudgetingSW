@@ -1,0 +1,39 @@
+\doxysection{com.\+example.\+a2.\+service.\+Authentication\+Manager Class Reference}
+\hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager}{}\label{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager}\index{com.example.a2.service.AuthenticationManager@{com.example.a2.service.AuthenticationManager}}
+
+
+Singleton -\/ \doxylink{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager}{Authentication\+Manager} manages user authentication.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a3bfcefbaebfe82e432fe9a72aaeb35b8}\label{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a3bfcefbaebfe82e432fe9a72aaeb35b8} 
+boolean {\bfseries register} (String email, String password)  throws SQLException 
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a60dc32da34b6edeb77d534dc25c1e039}\label{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a60dc32da34b6edeb77d534dc25c1e039} 
+boolean {\bfseries login} (String email, String password)  throws SQLException 
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a75c377399ace98b6ebc01dc20a7e27f6}\label{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a75c377399ace98b6ebc01dc20a7e27f6} 
+void {\bfseries logout} ()
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a3eb817c66df4c130e2e0dabad085f511}\label{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a3eb817c66df4c130e2e0dabad085f511} 
+\doxymbox{\hyperlink{classcom_1_1example_1_1a2_1_1model_1_1_user}{User}} {\bfseries get\+Current\+User} ()
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a3e7e571e7755eb3270fd2ba0a7e6317d}\label{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_a3e7e571e7755eb3270fd2ba0a7e6317d} 
+boolean {\bfseries is\+Logged\+In} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_af9da1f496bc2d3ddc2aa533548af3982}\label{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager_af9da1f496bc2d3ddc2aa533548af3982} 
+static synchronized Authentication\+Manager {\bfseries get\+Instance} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Singleton -\/ \doxylink{classcom_1_1example_1_1a2_1_1service_1_1_authentication_manager}{Authentication\+Manager} manages user authentication. 
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+main/\+java/\+com/\+example/\+a2/\+service/\+Authentication\+Manager.\+java\end{DoxyCompactItemize}

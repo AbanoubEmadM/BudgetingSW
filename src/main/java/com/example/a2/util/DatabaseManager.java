@@ -6,13 +6,27 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * Singleton DatabaseManager - manages SQLite database connection
+ * Singleton that owns the SQLite {@link Connection}, creates core tables, runs lightweight migrations,
+ * and seeds default categories. JDBC URL: {@code jdbc:sqlite:budget.db} (project working directory).
+ *
+ * @author Abanoub
+ * @version 1.0
+ * @see com.example.a2.HelloApplication
  */
 public class DatabaseManager {
+
+    /** Lazily created singleton holder. */
     private static DatabaseManager instance;
+    /** Open JDBC connection for the application lifetime. */
     private final Connection connection;
+    /** SQLite JDBC URL for the on-disk {@code budget.db} file. */
     private static final String DB_URL = "jdbc:sqlite:budget.db";
 
+    /**
+     * Opens the database, enables foreign keys, and initializes schema.
+     *
+     * @throws RuntimeException if connection or bootstrap DDL fails
+     */
     private DatabaseManager() {
         try {
             connection = DriverManager.getConnection(DB_URL);
@@ -22,16 +36,34 @@ public class DatabaseManager {
             throw new RuntimeException("Failed to connect to database", e);
         }
     }
+
+    /**
+     * Returns the process-wide {@link DatabaseManager} (double-checked locking pattern).
+     *
+     * @return singleton instance
+     */
     public static synchronized DatabaseManager getInstance() {
         if (instance == null) {
             instance = new DatabaseManager();
         }
         return instance;
     }
+
+    /**
+     * Exposes the shared JDBC connection to DAO classes.
+     *
+     * @return live SQLite connection
+     */
     public Connection getConnection() {
         return connection;
     }
 
+    /**
+     * Creates tables if missing, applies idempotent migrations, seeds categories, and creates indexes.
+     *
+     * @return nothing
+     * @throws RuntimeException wrapping {@link SQLException} on failure
+     */
     private void initializeDatabase() {
         String createUsersTable = """
             CREATE TABLE IF NOT EXISTS users (
@@ -121,7 +153,6 @@ public class DatabaseManager {
             stmt.execute("CREATE INDEX IF NOT EXISTS idx_goal_contributions_goal ON goal_contributions(goal_id)");
             runSchemaMigrations(stmt);
 
-            // Insert default categories
             stmt.execute("""
                 INSERT OR IGNORE INTO categories (name, type) VALUES
                 ('Salary', 'INCOME'),
@@ -143,12 +174,26 @@ public class DatabaseManager {
         }
     }
 
+    /**
+     * Runs ordered legacy migrations for users, transactions, and budgets.
+     *
+     * @param stmt open statement from the initializer
+     * @return nothing
+     * @throws SQLException on migration SQL failure
+     */
     private void runSchemaMigrations(Statement stmt) throws SQLException {
         migrateUsersTable(stmt);
         migrateTransactionsTable(stmt);
         migrateBudgetsTable(stmt);
     }
 
+    /**
+     * Migrates legacy {@code users} shape (username to email, primary key repair).
+     *
+     * @param stmt statement used for DDL/DML
+     * @return nothing
+     * @throws SQLException on migration failure
+     */
     private void migrateUsersTable(Statement stmt) throws SQLException {
         if (!columnExists("users", "email")) {
             stmt.execute("ALTER TABLE users ADD COLUMN email TEXT");
@@ -196,6 +241,13 @@ public class DatabaseManager {
         stmt.execute("CREATE UNIQUE INDEX IF NOT EXISTS idx_users_email_unique ON users(email)");
     }
 
+    /**
+     * Adds {@code transaction_date} column when migrating from year/month layout.
+     *
+     * @param stmt statement for DDL/DML
+     * @return nothing
+     * @throws SQLException on migration failure
+     */
     private void migrateTransactionsTable(Statement stmt) throws SQLException {
         if (!columnExists("transactions", "transaction_date")) {
             stmt.execute("ALTER TABLE transactions ADD COLUMN transaction_date TEXT");
@@ -209,6 +261,13 @@ public class DatabaseManager {
         }
     }
 
+    /**
+     * Adds month/year columns and optionally derives them from legacy {@code start_date}.
+     *
+     * @param stmt statement for DDL/DML
+     * @return nothing
+     * @throws SQLException on migration failure
+     */
     private void migrateBudgetsTable(Statement stmt) throws SQLException {
         if (!columnExists("budgets", "month")) {
             stmt.execute("ALTER TABLE budgets ADD COLUMN month INTEGER");
@@ -231,6 +290,12 @@ public class DatabaseManager {
         }
     }
 
+    /**
+     * Returns whether the {@code id} column on {@code users} is the primary key.
+     *
+     * @return {@code true} if {@code PRAGMA table_info} marks id as PK
+     * @throws SQLException on pragma failure
+     */
     private boolean isUsersIdPrimaryKey() throws SQLException {
         String sql = "PRAGMA table_info(users)";
         try (Statement pragmaStmt = connection.createStatement();
@@ -244,6 +309,14 @@ public class DatabaseManager {
         }
     }
 
+    /**
+     * Checks for a column on a table via {@code PRAGMA table_info}.
+     *
+     * @param tableName  SQLite table name
+     * @param columnName column to detect
+     * @return {@code true} if the column exists
+     * @throws SQLException on pragma failure
+     */
     private boolean columnExists(String tableName, String columnName) throws SQLException {
         String sql = "PRAGMA table_info(" + tableName + ")";
         try (Statement pragmaStmt = connection.createStatement();
@@ -257,6 +330,11 @@ public class DatabaseManager {
         }
     }
 
+    /**
+     * Closes the JDBC connection if still open (typically from {@link com.example.a2.HelloApplication#stop()}).
+     *
+     * @return nothing
+     */
     public void close() {
         try {
             if (connection != null && !connection.isClosed()) {

@@ -9,12 +9,33 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Data access for {@code transactions}: CRUD, monthly filters, and expense rollups for budgets.
+ *
+ * @author Abanoub
+ * @version 1.0
+ * @see com.example.a2.model.Transaction
+ * @see com.example.a2.util.DatabaseManager
+ */
 public class TransactionDAO {
+
+    /** Shared JDBC connection from {@link DatabaseManager}. */
     private final Connection connection;
 
+    /**
+     * Constructs the DAO with the singleton connection.
+     */
     public TransactionDAO() {
         this.connection = DatabaseManager.getInstance().getConnection();
     }
+
+    /**
+     * Inserts a new transaction row.
+     *
+     * @param transaction populated entity (id ignored)
+     * @return nothing
+     * @throws SQLException on insert failure
+     */
     public void createTransaction(Transaction transaction) throws SQLException {
         String sql = "INSERT INTO transactions (user_id, amount, type, category_id, transaction_date, description) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
@@ -27,6 +48,14 @@ public class TransactionDAO {
             pstmt.executeUpdate();
         }
     }
+
+    /**
+     * Lists all transactions for a user with category names (newest first).
+     *
+     * @param userId owning user
+     * @return ordered transaction list
+     * @throws SQLException on query failure
+     */
     public List<Transaction> getTransactionsByUser(int userId) throws SQLException {
         List<Transaction> transactions = new ArrayList<>();
         String sql = """
@@ -46,6 +75,14 @@ public class TransactionDAO {
         }
         return transactions;
     }
+
+    /**
+     * Deletes a transaction by id.
+     *
+     * @param transactionId primary key
+     * @return nothing
+     * @throws SQLException on delete failure
+     */
     public void deleteTransaction(int transactionId) throws SQLException {
         String sql = "DELETE FROM transactions WHERE id = ?";
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
@@ -54,6 +91,13 @@ public class TransactionDAO {
         }
     }
 
+    /**
+     * Loads a single transaction with joined category name.
+     *
+     * @param transactionId primary key
+     * @return entity or {@code null} if not found
+     * @throws SQLException on query failure
+     */
     public Transaction findById(int transactionId) throws SQLException {
         String sql = """
             SELECT t.*, c.name as category_name
@@ -71,6 +115,16 @@ public class TransactionDAO {
         }
         return null;
     }
+
+    /**
+     * Lists transactions for a user in a given calendar month.
+     *
+     * @param userId owning user
+     * @param month  month 1–12
+     * @param year   four-digit year
+     * @return transactions in that month
+     * @throws SQLException on query failure
+     */
     public List<Transaction> getTransactionsByUserAndMonth(int userId, int month, int year) throws SQLException {
         List<Transaction> transactions = new ArrayList<>();
         String sql = """
@@ -95,6 +149,17 @@ public class TransactionDAO {
         }
         return transactions;
     }
+
+    /**
+     * Sums expense amounts for a user/category/month (used by {@link BudgetDAO}).
+     *
+     * @param userId     owning user
+     * @param categoryId category filter
+     * @param month      calendar month
+     * @param year       calendar year
+     * @return total spent, or {@code 0} if none
+     * @throws SQLException on query failure
+     */
     public double getTotalSpentByCategory(int userId, int categoryId, int month, int year) throws SQLException {
         String sql = """
             SELECT COALESCE(SUM(amount), 0) as total
@@ -118,6 +183,14 @@ public class TransactionDAO {
         }
         return 0.0;
     }
+
+    /**
+     * Maps a joined row to a {@link Transaction}.
+     *
+     * @param rs current row
+     * @return populated transaction
+     * @throws SQLException if columns are invalid
+     */
     private Transaction mapResultSetToTransaction(ResultSet rs) throws SQLException {
         Transaction transaction = new Transaction();
         transaction.setId(rs.getInt("id"));

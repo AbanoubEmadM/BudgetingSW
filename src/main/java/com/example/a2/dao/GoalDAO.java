@@ -9,14 +9,33 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Data access for {@code financial_goals} and {@code goal_contributions}.
+ *
+ * @author Abanoub
+ * @version 1.0
+ * @see com.example.a2.model.Goal
+ * @see com.example.a2.util.DatabaseManager
+ */
 public class GoalDAO {
 
+    /** Shared JDBC connection from {@link DatabaseManager}. */
     private final Connection connection;
 
+    /**
+     * Constructs the DAO with the singleton connection.
+     */
     public GoalDAO() {
         this.connection = DatabaseManager.getInstance().getConnection();
     }
 
+    /**
+     * Inserts a goal and assigns the generated id to the entity.
+     *
+     * @param goal populated goal (id updated after insert)
+     * @return the same {@link Goal} instance with id set
+     * @throws SQLException on insert failure
+     */
     public Goal insertGoal(Goal goal) throws SQLException {
         String sql = """
             INSERT INTO financial_goals (user_id, name, target_amount, saved_amount, deadline)
@@ -38,6 +57,13 @@ public class GoalDAO {
         return goal;
     }
 
+    /**
+     * Updates mutable goal fields for an existing row owned by the user.
+     *
+     * @param goal entity with id and userId set
+     * @return nothing
+     * @throws SQLException on update failure
+     */
     public void updateGoal(Goal goal) throws SQLException {
         String sql = """
             UPDATE financial_goals
@@ -55,6 +81,14 @@ public class GoalDAO {
         }
     }
 
+    /**
+     * Deletes a goal owned by the given user (contributions cascade).
+     *
+     * @param goalId goal primary key
+     * @param userId owning user (authorization)
+     * @return nothing
+     * @throws SQLException on delete failure
+     */
     public void deleteGoal(int goalId, int userId) throws SQLException {
         String sql = "DELETE FROM financial_goals WHERE id = ? AND user_id = ?";
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
@@ -64,6 +98,14 @@ public class GoalDAO {
         }
     }
 
+    /**
+     * Loads a goal by id if owned by the user.
+     *
+     * @param goalId goal id
+     * @param userId owning user
+     * @return goal or {@code null}
+     * @throws SQLException on query failure
+     */
     public Goal findById(int goalId, int userId) throws SQLException {
         String sql = "SELECT * FROM financial_goals WHERE id = ? AND user_id = ?";
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
@@ -78,6 +120,13 @@ public class GoalDAO {
         return null;
     }
 
+    /**
+     * Lists all goals for a user ordered by deadline.
+     *
+     * @param userId owning user
+     * @return goals for UI binding
+     * @throws SQLException on query failure
+     */
     public List<Goal> findByUserId(int userId) throws SQLException {
         List<Goal> list = new ArrayList<>();
         String sql = """
@@ -97,7 +146,14 @@ public class GoalDAO {
     }
 
     /**
-     * Adds to {@code saved_amount} on the goal and records a contribution row.
+     * Records a contribution and increments {@code saved_amount} in one transaction.
+     *
+     * @param goalId         goal id
+     * @param userId         owning user (authorization)
+     * @param amount         positive contribution
+     * @param transactionId  optional linked income transaction id, or {@code null} for manual
+     * @return nothing
+     * @throws SQLException if the update affects zero rows or insert fails
      */
     public void addContribution(int goalId, int userId, double amount, Integer transactionId) throws SQLException {
         connection.setAutoCommit(false);
@@ -141,6 +197,13 @@ public class GoalDAO {
         }
     }
 
+    /**
+     * Returns whether an income transaction is already linked to any goal contribution.
+     *
+     * @param transactionId transaction primary key
+     * @return {@code true} if a {@code goal_contributions} row references it
+     * @throws SQLException on query failure
+     */
     public boolean isTransactionLinkedToAnyGoal(int transactionId) throws SQLException {
         String sql = "SELECT 1 FROM goal_contributions WHERE transaction_id = ? LIMIT 1";
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
@@ -151,6 +214,13 @@ public class GoalDAO {
         }
     }
 
+    /**
+     * Maps a {@code financial_goals} row to a {@link Goal}.
+     *
+     * @param rs current row
+     * @return populated goal
+     * @throws SQLException if columns are invalid
+     */
     private Goal mapRow(ResultSet rs) throws SQLException {
         Goal g = new Goal();
         g.setId(rs.getInt("id"));
